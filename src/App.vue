@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <the-header></the-header>
+    <router-view />
+    <the-footer></the-footer>
   </div>
 </template>
 
+<script>
+import TheHeader from "@/components/common/TheHeader.vue";
+import TheFooter from "@/components/common/TheFooter.vue";
+export default {
+  components: {
+    TheHeader,
+    TheFooter,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import "@/assets/plugins/revslider/public/assets/css/settings.css";
+@import "@/assets/plugins/tourmaster/plugins/elegant-font/style.css";
+@import "@/assets/plugins/tourmaster/tourmaster.css";
+@import "@/assets/plugins/goodlayers-core/plugins/combine/style.css";
+@import "@/assets/plugins/goodlayers-core/include/css/page-builder.css";
+@import "@/assets/css/tourmaster-style-custom.css";
+@import "@/assets/css/style-core.css";
+@font-face {
+  font-family: "ArcaMajora";
+  src: "@/assets/css/fonts/ArcaMajora3-Heavy.eot";
+  /* IE9 Compat Modes /
+  src: "@/assets/css/fonts/ArcaMajora3-Heavy.eot?#iefix"
+      format("embedded-opentype"),
+    / IE6-IE8 / "@/assets/css/fonts/ArcaMajora3-Heavy.woff2" format("woff2"),
+    / Super Modern Browsers / "@/assets/css/fonts/ArcaMajora3-Heavy.woff"
+      format("woff"),
+    / Pretty Modern Browsers / "@/assets/css/fonts/ArcaMajora3-Heavy.ttf"
+      format("truetype"),
+    / Safari, Android, iOS /
+      "@/assets/css/fonts/ArcaMajora3-Heavy.svg#svgFontName" format("svg"); / Legacy iOS */
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import "@/assets/css/traveltour-style-custom.css";
 </style>
