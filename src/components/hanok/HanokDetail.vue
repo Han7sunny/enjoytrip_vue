@@ -750,8 +750,25 @@
 </template>
 
 <script>
+import {getHanok} from "@/api/hanok";
 export default {
-    name:"HanokDetail"
+    name:"HanokDetail",
+    data(){
+        return {
+            hanok : {}
+        }
+    },
+    created(){
+        let hanokId = this.$route.params.hanokId;
+        getHanok(hanokId, 
+            ({ data }) => {
+                this.hanok = data;
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    }
 }
 </script>
 

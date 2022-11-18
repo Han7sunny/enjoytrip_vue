@@ -175,7 +175,7 @@
 
 <script>
 export default {
-    name:"ReviewList"
+    name:"ReviewList",
 }
 </script>
 

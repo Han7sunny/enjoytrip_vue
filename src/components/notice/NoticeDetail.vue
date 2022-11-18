@@ -205,8 +205,26 @@
 </template>
 
 <script>
+import {getPost} from "@/api/board"
 export default {
-    name:"NoticeDetail"
+    name:"NoticeDetail",
+    data(){
+        return {
+            notice : {}
+        }
+    },
+    created(){
+        let boardId = this.$route.params.boardId;
+        let postId = this.$route.params.postId;
+        getPost(boardId, postId, 
+            ({ data }) => {
+                this.notice = data;
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    }
 }
 </script>
 

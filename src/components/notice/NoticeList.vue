@@ -34,7 +34,37 @@
                                             </div>
                                         </div>
                                     </div> -->
-                                    <h1>notice table</h1>
+                
+                <div class="container">
+					<div class="board container mt-5 mb-5 pb-5">
+						<table class="table table-hover text-center" data-aos="fade-up" v-if="noticeList.length">
+							<thead>
+								<tr class="row">
+									<th class="col-1">번호</th>
+									<th class="col-5">제목</th>
+									<th class="col-3">작성자</th>
+									<th class="col-2">작성날짜</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="row"
+									v-for="(notice, index) in noticeList" :key="notice.postId">
+                                    <router-link :to="{name:'noticeDetail', params:{postId : notice.postId}}">
+									<th class="col-1">{{index}}</th>
+									<td class="col-5">{{notice.title}}</td>
+									<td class="col-3">{{notice.userId}}</td>
+									<td class="col-2">{{notice.registeredTime}}</td>
+                                    </router-link>
+								</tr>
+							</tbody>
+						</table>
+						<div class="mt-5 text-center" v-else>작성된 공지사항이 없습니다.</div>
+					</div>
+				</div>
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -138,8 +168,25 @@
 </template>
 
 <script>
+import {getPostListByBoardId} from "@/api/board"
 export default {
-
+    name:"NoticeList",
+    data(){
+        return {
+            noticeList : []
+        }
+    },
+    created(){
+        getPostListByBoardId(
+            4, // 공지사항
+            ({ data }) => {
+                this.noticeList = data;
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    }
 }
 </script>
 

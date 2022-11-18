@@ -201,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+  </div>
 <!-- footer 기존과 다름 -->
 </template>
 
