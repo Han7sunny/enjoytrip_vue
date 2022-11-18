@@ -40,9 +40,9 @@
             class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"
             style="padding-bottom: 40px"
           >
+          <router-link :to="{name:'review'}">
             <a
               class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
-              href="#"
               style="
                 font-size: 15px;
                 font-weight: 400;
@@ -55,7 +55,7 @@
                 class="gdlr-core-pos-right fa fa-long-arrow-right"
                 style="font-size: 17px"
               ></i
-            ></a>
+            ></a></router-link>
           </div>
         </div>
         <div class="gdlr-core-pbf-element">
@@ -87,7 +87,8 @@
                       class="gdlr-core-blog-modern-content gdlr-core-left-align"
                     >
                       <h3 class="gdlr-core-blog-title gdlr-core-skin-title">
-                        <a href="#">How to travel with paper map</a>
+                        <router-link :to="{name:'reviewDetail', params:{postId:postId}}">
+                        How to travel with paper map</router-link>
                       </h3>
                       <div
                         class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"
@@ -132,7 +133,9 @@
                       class="gdlr-core-blog-modern-content gdlr-core-left-align"
                     >
                       <h3 class="gdlr-core-blog-title gdlr-core-skin-title">
-                        <a href="#">Change your place and get the fresh air</a>
+                        <router-link :to="{name:'reviewDetail', params:{postId:postId}}">
+                          Change your place and get the fresh air
+                        </router-link>
                       </h3>
                       <div
                         class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"
@@ -177,7 +180,9 @@
                       class="gdlr-core-blog-modern-content gdlr-core-left-align"
                     >
                       <h3 class="gdlr-core-blog-title gdlr-core-skin-title">
-                        <a href="#">Pityful a rethoric question ran</a>
+                        <router-link :to="{name:'reviewDetail', params:{postId:postId}}">
+                          Pityful a rethoric question ran
+                        </router-link>
                       </h3>
                       <div
                         class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"

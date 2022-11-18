@@ -84,7 +84,8 @@
             <div class="traveltour-main-menu" id="traveltour-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li class="menu-item current-menu-item traveltour-normal-menu">
-                  <a href="index.html" class="sf-with-ul-pre">Home</a>
+                  <router-link :to="{name:'main'}">
+                  <a class="sf-with-ul-pre">Home</a></router-link>
                 </li>
                 <li
                   class="menu-item menu-item-has-children traveltour-normal-menu"
@@ -460,11 +461,11 @@
                 <li
                   class="menu-item menu-item-has-children traveltour-normal-menu"
                 >
+                <router-link :to="{name:'hanok'}">
                   <a
-                    href="tour-side-thumbnail-with-frame-right-sidebar.html"
                     class="sf-with-ul-pre"
-                    >Tour List</a
-                  >
+                    >한옥</a
+                  ></router-link>
                   <!-- <ul class="sub-menu">
                     <li class="menu-item menu-item-has-children" data-size="60">
                       <a
@@ -678,12 +679,18 @@
                   </ul> -->
                 </li>
                 <li class="menu-item traveltour-normal-menu">
-                  <a href="destinations.html">여행 테마</a>
+                  <router-link :to="{name:'theme'}">
+                  <a>여행 테마</a>
+                  </router-link>
                 </li>
                 <li
                   class="menu-item menu-item-has-children traveltour-normal-menu"
                 >
-                  <a href="#" class="sf-with-ul-pre">Date &#038; Pricing</a>
+                <router-link :to="{name:'community'}">
+                  <a class="sf-with-ul-pre">
+                    커뮤니티
+                    </a>
+                    </router-link>
                   <!-- <ul class="sub-menu">
                     <li class="menu-item" data-size="60">
                       <a href="finland-helsinki-santa-claus-town-8-days.html"
@@ -744,11 +751,11 @@
                 <li
                   class="menu-item menu-item-has-children traveltour-normal-menu"
                 >
-                  <a
-                    href="blog-full-right-sidebar-with-frame.html"
+                  <router-link :to="{name:'notice'}">                  
+                    <a
                     class="sf-with-ul-pre"
                     >공지사항</a
-                  >
+                  ></router-link>
                   <!-- <ul class="sub-menu">
                     <li class="menu-item menu-item-has-children" data-size="60">
                       <a
