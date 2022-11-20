@@ -3,7 +3,7 @@
     <div class="traveltour-body-wrapper clearfix traveltour-with-frame">
       <the-search></the-search>
       <content-list></content-list>
-      <theme-list></theme-list>
+      <main-theme-list></main-theme-list>
       <the-highlight></the-highlight>
       <review-list></review-list>
     </div>
@@ -13,7 +13,7 @@
 <script>
 import TheSearch from "@/components/main/TheSearch.vue";
 import ContentList from "@/components/main/ContentList.vue";
-import ThemeList from "@/components/main/ThemeList.vue";
+import MainThemeList from "@/components/main/MainThemeList.vue";
 import TheHighlight from "@/components/main/TheHighlight.vue";
 import ReviewList from "@/components/main/ReviewList.vue";
 export default {
@@ -21,7 +21,7 @@ export default {
   components: {
     TheSearch,
     ContentList,
-    ThemeList,
+    MainThemeList,
     TheHighlight,
     ReviewList,
   },

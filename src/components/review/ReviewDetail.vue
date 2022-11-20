@@ -11,12 +11,12 @@
                                 <div class="traveltour-single-article-date-wrapper"><span class="traveltour-single-article-date-day">06</span><span class="traveltour-single-article-date-month">Jun</span></div>
                                 <div class="traveltour-single-article-head-right">
                                     <div class="traveltour-blog-info-wrapper">
-                                        <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-author"><span class="traveltour-head"><i class="icon_documents_alt" ></i></span><a href="../author/superuser/index.html" title="Posts by John Smith" rel="author">John Smith</a></div>
+                                        <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-author"><span class="traveltour-head"><i class="icon_documents_alt" ></i></span><a href="../author/superuser/index.html" title="Posts by John Smith" rel="author">{{review.userId}}</a></div>
                                         <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-category"><span class="traveltour-head"><i class="icon_folder-alt" ></i></span><a href="../category/blog/index.html" rel="tag">Blog</a><span class="gdlr-core-sep">,</span> <a href="../category/post-format/index.html" rel="tag">Post Format</a><span class="gdlr-core-sep">,</span> <a href="../category/uncategorized/index.html" rel="tag">Uncategorized</a></div>
                                         <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-tag"><span class="traveltour-head"><i class="icon_tags_alt" ></i></span><a href="../tag/news/index.html" rel="tag">News</a></div>
-                                        <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-comment-number"><span class="traveltour-head"><i class="icon_comment_alt" ></i></span>2</div>
+                                        <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-comment-number"><span class="traveltour-head"><i class="icon_comment_alt" ></i></span>{{replyList.length}}</div>
                                     </div>
-                                    <h1 class="traveltour-single-article-title">Standard Post Type</h1></div>
+                                    <h1 class="traveltour-single-article-title">{{review.title}}</h1></div>
                             </header>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                         <div class="traveltour-single-author-avartar traveltour-media-image"><img alt='' src='https://secure.gravatar.com/avatar/c4ffc7a48d6a02dac31975c893fa7ddb?s=90&amp;d=mm&amp;r=g'  height='90' width='90' /></div>
                                         <div class="traveltour-single-author-content-wrap">
                                             <div class="traveltour-single-author-caption traveltour-info-font">About the author</div>
-                                            <h4 class="traveltour-single-author-title"><a href="../author/superuser/index.html" title="Posts by John Smith" rel="author">John Smith</a></h4>
+                                            <h4 class="traveltour-single-author-title"><a href="../author/superuser/index.html" title="Posts by John Smith" rel="author">{{review.userId}}</a></h4>
                                             <div class="traveltour-single-author-description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
                                         </div>
                                     </div>
@@ -99,28 +99,28 @@
                                     </span>
                                 </div>
                                 <div id="comments" class="traveltour-comments-area">
-                                    <div class="traveltour-comments-title">2 Responses</div>
+                                    <div class="traveltour-comments-title">{{replyList.length}} Responses</div>
                                     <ol class="comment-list">
-                                        <li class="comment byuser comment-author-superuser bypostauthor even thread-even depth-1" id="li-comment-5">
+                                        <li class="comment byuser comment-author-superuser bypostauthor even thread-even depth-1" id="li-comment-5" v-for="reply in replyList" :key="reply.replyId">
                                             <article id="comment-5" class="comment-article">
                                                 <div class="comment-avatar"><img alt='' src='upload/c4ffc7a48d6a02dac31975c893fa7ddb.jpeg' class='avatar avatar-90 photo' height='90' width='90' /></div>
                                                 <div class="comment-body">
                                                     <header class="comment-meta">
-                                                        <div class="comment-author traveltour-title-font">John Smith</div>
+                                                        <div class="comment-author traveltour-title-font">{{reply.userId}}</div>
                                                         <div class="comment-time traveltour-info-font">
                                                             <a href="index.html#comment-5">
-                                                                <time datetime="2016-11-26T15:04:44+00:00"> November 26, 2016 at 3:04 pm </time>
+                                                                <time datetime="2016-11-26T15:04:44+00:00"> {{reply.registeredTime}} </time>
                                                             </a>
                                                         </div>
                                                         <div class="comment-reply"> <a rel='nofollow' class='comment-reply-link' href='#comment-5' onclick='return addComment.moveForm( "comment-5", "5", "respond", "1268" )' aria-label='Reply to John Smith'>Reply</a></div>
                                                     </header>
                                                     <section class="comment-content">
-                                                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                                                        <p>{{reply.content}}</p>
                                                     </section>
                                                 </div>
                                             </article>
                                         </li>
-                                        <li class="comment byuser comment-author-superuser bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-6">
+                                        <!-- <li class="comment byuser comment-author-superuser bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-6">
                                             <article id="comment-6" class="comment-article">
                                                 <div class="comment-avatar"><img alt='' src='upload/c4ffc7a48d6a02dac31975c893fa7ddb.jpeg'  height='90' width='90' /></div>
                                                 <div class="comment-body">
@@ -138,22 +138,22 @@
                                                     </section>
                                                 </div>
                                             </article>
-                                        </li>
+                                        </li> -->
                                     </ol>
                                     <div id="respond" class="comment-respond">
                                         <h4 id="reply-title" class="comment-reply-title traveltour-content-font">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel Reply</a></small></h4>
                                         <form action="#" method="post" id="commentform" class="comment-form" novalidate>
                                             <div class="comment-form-comment">
-                                                <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment*"></textarea>
+                                                <textarea id="content" v-model="reply.content" cols="45" rows="8" aria-required="true" placeholder="Reply"></textarea>
                                             </div>
                                             <div class="comment-form-head">
                                                 <div class="traveltour-comment-form-author">
-                                                    <input id="author" name="author" type="text" value="" placeholder="Name*" size="30" aria-required='true' />
+                                                    <input id="author" name="userId" type="text" value="" placeholder="loginUserId" size="30" aria-required='true' />
                                                 </div>
                                                 <div class="traveltour-comment-form-email">
-                                                    <input id="email" name="email" type="text" value="" placeholder="Email*" size="30" aria-required='true' />
+                                                    <input id="email" name="email" type="text" value="" placeholder="loginUserEmail" size="30" aria-required='true' />
                                                 </div>
-                                                <input id="url" name="url" type="text" value="" placeholder="Website" size="30" />
+                                                <!-- <input id="url" name="url" type="text" value="" placeholder="Website" size="30" /> -->
                                                 <div class="clear"></div>
                                             </div>
                                             <p class="comment-form-cookies-consent">
@@ -161,7 +161,7 @@
                                                 <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label>
                                             </p>
                                             <p class="form-submit">
-                                                <input name="submit" type="submit" id="submit" class="submit" value="Post Comment" />
+                                                <input name="submit" type="submit" id="submit" class="submit" value="Post Comment" @click="checkReplyValue"/>
                                             </p>
                                             <p class="antispam-group antispam-group-q" style="clear: both;">
                                                 <label>Current ye@r <span class="required">*</span></label>
@@ -177,6 +177,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- right side bar -->
                         <div class=" traveltour-sidebar-right traveltour-column-20 traveltour-line-height traveltour-line-height">
                             <div class="traveltour-sidebar-area traveltour-item-pdlr">
                                 <div id="text-9" class="widget widget_text traveltour-widget">
@@ -186,11 +187,13 @@
                                 <div id="recent-comments-6" class="widget widget_recent_comments traveltour-widget">
                                     <h3 class="traveltour-widget-title"><span class="traveltour-widget-head-text">Recent Comments</span></h3><span class="clear"></span>
                                     <ul id="recentcomments">
-                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../pack-wisely-before-traveling/index.html#comment-39">Pack wisely before traveling</a></li>
-                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../pack-wisely-before-traveling/index.html#comment-38">Pack wisely before traveling</a></li>
+                                        <li class="recentcomments" v-for="reply in replyList" :key="reply.replyId">
+                                            <span class="comment-author-link">{{reply.userId}}</span> on <a href="../pack-wisely-before-traveling/index.html#comment-39">{{reply.content}}</a>
+                                        </li>
+                                        <!-- <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../pack-wisely-before-traveling/index.html#comment-38">Pack wisely before traveling</a></li>
                                         <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../gallery-post-format/index.html#comment-4">Gallery Post Format</a></li>
                                         <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../gallery-post-format/index.html#comment-3">Gallery Post Format</a></li>
-                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="index.html#comment-6">Standard Post Type</a></li>
+                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="index.html#comment-6">Standard Post Type</a></li> -->
                                     </ul>
                                 </div>
                                 <div id="tag_cloud-4" class="widget widget_tag_cloud traveltour-widget">
@@ -206,8 +209,43 @@
 </template>
 
 <script>
+import {getPost} from "@/api/board"
+import {postReply} from "@/api/reply"
 export default {
-    name:"ReviewDetail"
+    name:"ReviewDetail",
+    data(){
+        return{
+            review : Object,
+            replyList : Array,
+            reply : {
+                content : "",
+                postId : this.review.postId,
+                userId : null // loginUserId
+            }
+        }
+    },
+    methods:{
+        checkReplyValue(){
+            let err = true;
+            let msg = "";
+            !this.reply.content && ((msg = "댓글을 입력해주세요"), (err = false), this.$refs.content.focus());
+
+            if (!err) alert(msg);
+            else this.registReply();
+            
+        }, 
+        registReply(){
+            postReply(this.reply)
+        }
+    },
+    created(){
+        getPost(3, this.$route.params.postId,
+            ({data}) => {
+                this.review = data;
+            },(error) => {
+                console.log(error); // errorpage
+        })
+    }
 }
 </script>
 

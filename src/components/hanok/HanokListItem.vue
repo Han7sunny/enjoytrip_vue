@@ -3,9 +3,7 @@
     <div class="tourmaster-tour-modern tourmaster-with-thumbnail tourmaster-without-info">
       <div class="tourmaster-tour-modern-inner">
         <div class="tourmaster-tour-thumbnail tourmaster-media-image">
-          <router-link :to="{ name: 'hanokDetail', params: { hanokId: hanok.zipcode } }"
-            ><img src="hanok.img" alt="" width="600" height="800"
-          /></router-link>
+          <img :src="hanok.img" alt="" width="600" height="800"/>
         </div>
         <div class="tourmaster-tour-content-wrap">
           <div class="tourmaster-tour-price-wrap">
@@ -14,7 +12,7 @@
               ><span class="tourmaster-tail">{{ hanok.title }}</span></span
             >
             <h3 class="tourmaster-tour-title gdlr-core-skin-title">
-              <router-link :to="{ name: 'hanokDetail', params: { hanokId: hanok.zipcode } }"
+              <router-link :to="{ name: 'hanokDetail', params: { hanokId: hanok.hanokId } }"
             >{{ hanok.addr }}</router-link>
             </h3>
           </div>

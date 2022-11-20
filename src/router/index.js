@@ -34,7 +34,7 @@ const routes = [
         component:()=>import("@/components/theme/ThemeList.vue")
       },
       {
-        path: "detail/:postId",
+        path: "detail/:themeId",
         name: "themeDetail",
         component:()=>import("@/components/theme/ThemeDetail.vue")
       }
@@ -55,6 +55,52 @@ const routes = [
         path: "detail/:postId",
         name: "reviewDetail",
         component:()=>import("@/components/review/ReviewDetail.vue")
+      },
+      {
+        path: "write",
+        name: "reviewWrite",
+        component:()=>import("@/components/review/ReviewWrite.vue")
+      }
+    ]
+  },
+  {
+    path: "/mateReview",
+    name: "mateReview",
+    component: () => import("@/views/AppMateReview.vue"),
+    redirect: "/mateReview",
+    children: [
+      {
+        path: "",
+        name: "mateReviewList",
+        component:()=>import("@/components/mateReview/MateReviewList.vue")
+      },
+      {
+        path: "detail/:postId",
+        name: "mateReviewDetail",
+        component:()=>import("@/components/mateReview/MateReviewDetail.vue")
+      }
+    ]
+  },
+  {
+    path: "/mate",
+    name: "mate",
+    component: () => import("@/views/AppMate.vue"),
+    redirect: "/mate",
+    children: [
+      {
+        path: "",
+        name: "mateList",
+        component:()=>import("@/components/mate/MateList.vue")
+      },
+      {
+        path: "detail/:postId",
+        name: "mateDetail",
+        component:()=>import("@/components/mate/MateDetail.vue")
+      },
+      {
+        path: "write",
+        name: "mateWrite",
+        component:()=>import("@/components/mate/MateWrite.vue")
       }
     ]
   },
@@ -70,7 +116,7 @@ const routes = [
         component:()=>import("@/components/hanok/HanokList.vue")
       },
       {
-        path: "detail/:postId",
+        path: "detail/:hanokId",
         name: "hanokDetail",
         component:()=>import("@/components/hanok/HanokDetail.vue")
       }

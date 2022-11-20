@@ -8,112 +8,40 @@
                 <div class="traveltour-page-title-container traveltour-container">
                     <div class="traveltour-page-title-content traveltour-item-pdlr">
                         <h1 class="traveltour-page-title">여행 메이트 </h1>
-                        <div class="traveltour-page-caption">Explore Tours By Destinations</div>
+                        <div class="traveltour-page-caption">새로운 여행지, 새로운 사람과 함께</div>
                     </div>
                 </div>
             </div>
+            <div class="gdlr-core-pbf-element">
+          <div
+            class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-right-align"
+            style="padding-top: 52px;padding-bottom: 52px;"
+          >
+          <router-link :to="{name:'searchContent'}"> <!-- 여행지 먼저 검색하고 해당 여행지에서 메이트/후기 작성 등 누르면 MateWrite로 이동 -->
+            <a
+              class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
+              style="
+                font-size: 15px;
+                font-weight: 400;
+                letter-spacing: 0px;
+                color: #e66836;
+                padding: 8px 0px 0px 0px;
+              "
+              ><span class="gdlr-core-content">여행 메이트 모집하러 가기</span
+              ><i
+                class="gdlr-core-pos-right fa fa-long-arrow-right"
+                style="font-size: 17px"
+              ></i
+            ></a></router-link>
+          </div>
+        </div>
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
                 <div class="gdlr-core-page-builder-body">
                     <div class="gdlr-core-pbf-section">
                         <div class="gdlr-core-pbf-section-container gdlr-core-container clearfix">
                             <div class="gdlr-core-pbf-element">
                                 <div class="tourmaster-tour-category clearfix ">
-                                    <div class="tourmaster-tour-category-grid tourmaster-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-20 tourmaster-column-first tourmaster-with-thumbnail">
-                                        <div class="tourmaster-tour-category-item-wrap">
-                                            <div class="tourmaster-tour-category-thumbnail tourmaster-media-image"><img src="upload/shutterstock_124333858-800x960.jpg" alt="" width="800" height="960" /></div>
-                                            <div class="tourmaster-tour-category-overlay"></div>
-                                            <div class="tourmaster-tour-category-overlay-front"></div>
-                                            <div class="tourmaster-tour-category-head">
-                                                <div class="tourmaster-tour-category-head-display clearfix">
-                                                    <h3 class="tourmaster-tour-category-title"><i class="icon_pin_alt" ></i>South America</h3>
-                                                    <div class="tourmaster-tour-category-count">3 tours</div>
-                                                </div>
-                                                <div class="tourmaster-tour-category-head-animate"><a class="tourmaster-tour-category-head-link" href="../tour-destination/south-america/index.html">View all tours</a>
-                                                    <div class="tourmaster-tour-category-head-divider"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tourmaster-tour-category-grid tourmaster-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-20 tourmaster-with-thumbnail">
-                                        <div class="tourmaster-tour-category-item-wrap">
-                                            <div class="tourmaster-tour-category-thumbnail tourmaster-media-image"><img src="upload/shutterstock_255194035-800x960.jpg" alt="" width="800" height="960" /></div>
-                                            <div class="tourmaster-tour-category-overlay"></div>
-                                            <div class="tourmaster-tour-category-overlay-front"></div>
-                                            <div class="tourmaster-tour-category-head">
-                                                <div class="tourmaster-tour-category-head-display clearfix">
-                                                    <h3 class="tourmaster-tour-category-title"><i class="icon_pin_alt" ></i>Europe</h3>
-                                                    <div class="tourmaster-tour-category-count">7 tours</div>
-                                                </div>
-                                                <div class="tourmaster-tour-category-head-animate"><a class="tourmaster-tour-category-head-link" href="../tour-destination/europe/index.html">View all tours</a>
-                                                    <div class="tourmaster-tour-category-head-divider"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tourmaster-tour-category-grid tourmaster-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-20 tourmaster-with-thumbnail">
-                                        <div class="tourmaster-tour-category-item-wrap">
-                                            <div class="tourmaster-tour-category-thumbnail tourmaster-media-image"><img src="upload/photodune-488847-venice-m-800x960.jpg" alt="" width="800" height="960" /></div>
-                                            <div class="tourmaster-tour-category-overlay"></div>
-                                            <div class="tourmaster-tour-category-overlay-front"></div>
-                                            <div class="tourmaster-tour-category-head">
-                                                <div class="tourmaster-tour-category-head-display clearfix">
-                                                    <h3 class="tourmaster-tour-category-title"><i class="icon_pin_alt" ></i>Eastern Europe</h3>
-                                                    <div class="tourmaster-tour-category-count">2 tours</div>
-                                                </div>
-                                                <div class="tourmaster-tour-category-head-animate"><a class="tourmaster-tour-category-head-link" href="../tour-destination/eastern-europe/index.html">View all tours</a>
-                                                    <div class="tourmaster-tour-category-head-divider"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tourmaster-tour-category-grid tourmaster-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-20 tourmaster-column-first tourmaster-with-thumbnail">
-                                        <div class="tourmaster-tour-category-item-wrap">
-                                            <div class="tourmaster-tour-category-thumbnail tourmaster-media-image"><img src="upload/shutterstock_147744218-800x960.jpg" alt="" width="800" height="960" /></div>
-                                            <div class="tourmaster-tour-category-overlay"></div>
-                                            <div class="tourmaster-tour-category-overlay-front"></div>
-                                            <div class="tourmaster-tour-category-head">
-                                                <div class="tourmaster-tour-category-head-display clearfix">
-                                                    <h3 class="tourmaster-tour-category-title"><i class="icon_pin_alt" ></i>Asia</h3>
-                                                    <div class="tourmaster-tour-category-count">5 tours</div>
-                                                </div>
-                                                <div class="tourmaster-tour-category-head-animate"><a class="tourmaster-tour-category-head-link" href="../tour-destination/asia/index.html">View all tours</a>
-                                                    <div class="tourmaster-tour-category-head-divider"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tourmaster-tour-category-grid tourmaster-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-20 tourmaster-with-thumbnail">
-                                        <div class="tourmaster-tour-category-item-wrap">
-                                            <div class="tourmaster-tour-category-thumbnail tourmaster-media-image"><img src="upload/Fotolia_16069076_Subscription_Monthly_XXL-800x960.jpg" alt="" width="800" height="960" /></div>
-                                            <div class="tourmaster-tour-category-overlay"></div>
-                                            <div class="tourmaster-tour-category-overlay-front"></div>
-                                            <div class="tourmaster-tour-category-head">
-                                                <div class="tourmaster-tour-category-head-display clearfix">
-                                                    <h3 class="tourmaster-tour-category-title"><i class="icon_pin_alt" ></i>America</h3>
-                                                    <div class="tourmaster-tour-category-count">4 tours</div>
-                                                </div>
-                                                <div class="tourmaster-tour-category-head-animate"><a class="tourmaster-tour-category-head-link" href="../tour-destination/america/index.html">View all tours</a>
-                                                    <div class="tourmaster-tour-category-head-divider"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tourmaster-tour-category-grid tourmaster-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-20 tourmaster-with-thumbnail">
-                                        <div class="tourmaster-tour-category-item-wrap">
-                                            <div class="tourmaster-tour-category-thumbnail tourmaster-media-image"><img src="upload/shutterstock_120562819-800x960.jpg" alt="" width="800" height="960" /></div>
-                                            <div class="tourmaster-tour-category-overlay"></div>
-                                            <div class="tourmaster-tour-category-overlay-front"></div>
-                                            <div class="tourmaster-tour-category-head">
-                                                <div class="tourmaster-tour-category-head-display clearfix">
-                                                    <h3 class="tourmaster-tour-category-title"><i class="icon_pin_alt" ></i>Africa</h3>
-                                                    <div class="tourmaster-tour-category-count">3 tours</div>
-                                                </div>
-                                                <div class="tourmaster-tour-category-head-animate"><a class="tourmaster-tour-category-head-link" href="../tour-destination/africa/index.html">View all tours</a>
-                                                    <div class="tourmaster-tour-category-head-divider"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <mate-list-item v-for="mate in mateList" :key="mate.postId" :mate="mate"></mate-list-item>
                                 </div>
                             </div>
                         </div>
@@ -217,8 +145,29 @@
 </template>
 
 <script>
+import {getPostListByBoardId} from "@/api/board";
+import MateListItem from "@/components/mate/MateListItem.vue"
 export default {
-    name:"MateList"
+    name:"MateList",
+    data(){
+        return{
+            mateList : []
+        }
+    },
+    components:{
+        MateListItem
+    },
+    created(){
+        getPostListByBoardId(
+            1, // 여행 메이트
+            ({ data }) => {
+                this.mateList = data;
+            },
+            (error) => {
+                console.log(error); // 추후 에러 페이지
+            }
+        );
+    }
 }
 </script>
 

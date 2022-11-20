@@ -10,4 +10,8 @@ function getHanok(hanokId, success, fail) {
     api.get(`/hanok/${hanokId}`).then(success).catch(fail);
 }
 
-export { getHanokList, getHanok };
+function getHanokListByCriteria(stateId, cityId, success, fail) {
+    api.get(`/hanok/state/${stateId}/city/${cityId}`).then(success).catch(fail);
+}
+
+export { getHanokList, getHanok, getHanokListByCriteria };

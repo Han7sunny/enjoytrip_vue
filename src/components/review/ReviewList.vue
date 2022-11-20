@@ -5,8 +5,8 @@
                 <div class="traveltour-page-title-overlay"></div>
                 <div class="traveltour-page-title-container traveltour-container">
                     <div class="traveltour-page-title-content traveltour-item-pdlr">
-                        <h1 class="traveltour-page-title">Blog Full Right Sidebar</h1>
-                        <div class="traveltour-page-caption">Caption Aligned Here</div>
+                        <h1 class="traveltour-page-title">여행 후기</h1>
+                        <div class="traveltour-page-caption">더 많은 여행 후기를 찾아보세요.</div>
                     </div>
                 </div>
             </div>
@@ -20,25 +20,25 @@
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix  gdlr-core-style-blog-full" id="div_af85_0">
                                                 <div class="gdlr-core-blog-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
-                                                    <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-pdlr gdlr-core-style-left">
+                                                    <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-pdlr gdlr-core-style-left" v-for="review in reviewList" :key="review.postId">
                                                         <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
                                                             <a href="../pack-wisely-before-traveling/index.html"><img src="upload/pexels-photo-1280x580.jpg" alt="" width="1280" height="580" />
-                                                                <div class="gdlr-core-sticky-banner gdlr-core-title-font"><i class="fa fa-bolt"></i>Sticky Post</div>
+                                                                <div class="gdlr-core-sticky-banner gdlr-core-title-font"><i class="fa fa-bolt"></i>인기 여행 후기</div>
                                                             </a>
                                                         </div>
                                                         <div class="gdlr-core-blog-full-head clearfix">
                                                             <div class="gdlr-core-blog-full-head-right">
-                                                                <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head" ><i class="icon_clock_alt" ></i></span><a href="../2016/06/06/index.html">June 6, 2016</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class="gdlr-core-head" ><i class="icon_documents_alt" ></i></span><a href="../author/superuser/index.html" title="Posts by John Smith" rel="author">John Smith</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head" ><i class="icon_folder-alt" ></i></span><a href="../category/blog/index.html" rel="tag">Blog</a><span class="gdlr-core-sep">,</span> <a href="../category/uncategorized/index.html" rel="tag">Uncategorized</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-comment-number"><span class="gdlr-core-head" ><i class="icon_comment_alt" ></i></span><a href="../pack-wisely-before-traveling/index.html#respond">5 </a></span>
+                                                                <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head" ><i class="icon_clock_alt" ></i></span><a href="../2016/06/06/index.html">{{reivew.registeredTime}}</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class="gdlr-core-head" ><i class="icon_documents_alt" ></i></span><a href="../author/superuser/index.html" title="Posts by John Smith" rel="author">{{review.userId}}</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head" ><i class="icon_folder-alt" ></i></span><a href="../category/blog/index.html" rel="tag">Blog</a><span class="gdlr-core-sep">,</span> <a href="../category/uncategorized/index.html" rel="tag">Uncategorized</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-comment-number"><span class="gdlr-core-head" ><i class="icon_comment_alt" ></i></span><a href="../pack-wisely-before-traveling/index.html#respond">{{review.replies.length}}</a></span>
                                                                 </div>
                                                                 <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_af85_0"><a href="../pack-wisely-before-traveling/index.html" >Pack wisely before traveling</a></h3></div>
                                                         </div>
-                                                        <div class="gdlr-core-blog-content">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the...
+                                                        <div class="gdlr-core-blog-content">{{review.content}} <!-- content 내용 몇글자까지만 보이도록..?-->
                                                             <div class="clear"></div>                        
-                                                            <router-link :to="{name:'reviewDetail', params:{postId:postId}}">
+                                                            <router-link :to="{name:'reviewDetail', params:{postId:review.postId}}">
                                                                 <a class="gdlr-core-excerpt-read-more gdlr-core-button gdlr-core-rectangle">Read More</a>
                                                             </router-link></div>
                                                     </div>
-                                                    <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-pdlr gdlr-core-style-left">
+                                                    <!-- <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-pdlr gdlr-core-style-left">
                                                         <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
                                                             <a href="../how-to-travel-with-paper-map/index.html"><img src="upload/shutterstock_195507533-1280x580.jpg" alt="" width="1280" height="580" /></a>
                                                         </div>
@@ -102,7 +102,7 @@
                                                         </div>
                                                         <div class="gdlr-core-blog-content">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa...
                                                             <div class="clear"></div><a class="gdlr-core-excerpt-read-more gdlr-core-button gdlr-core-rectangle" href="../even-the-all-powerful-pointing/index.html">Read More</a></div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="gdlr-core-pagination  gdlr-core-style-circle gdlr-core-left-align gdlr-core-item-pdlr"><span aria-current='page' class='page-numbers current'>1</span> <a class='page-numbers' href='page/2/index.html'>2</a> <a class='page-numbers' href='page/3/index.html'>3</a>
                                                     <a class="next page-numbers" href="page/2/index.html"></a>
@@ -116,8 +116,24 @@
                         <div class=" traveltour-sidebar-right traveltour-column-20 traveltour-line-height traveltour-line-height">
                             <div class="traveltour-sidebar-area traveltour-item-pdlr">
                                 <div id="text-7" class="widget widget_text traveltour-widget">
-                                    <h3 class="traveltour-widget-title"><span class="traveltour-widget-head-text">Text Widget</span></h3><span class="clear"></span>
-                                    <div class="textwidget">Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Etiam porta sem malesuada.</div>
+                                    <h3 class="traveltour-widget-title"><span class="traveltour-widget-head-text">여행 후기를 작성해 주세요.</span></h3><span class="clear"></span>
+                                    <!-- <div class="textwidget">여행 후기를 작성해주세요.</div> -->
+                                    <router-link :to="{ name: 'reviewWrite' }">
+                                    <a
+                                    class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
+                                    style="
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                        letter-spacing: 0px;
+                                        color: #e66836;
+                                        padding: 8px 0px 0px 0px;
+                                    "
+                                    ><span class="gdlr-core-content">여행 후기 작성하러 가기</span
+                                    ><i
+                                        class="gdlr-core-pos-right fa fa-long-arrow-right"
+                                        style="font-size: 17px"
+                                    ></i
+                                    ></a></router-link>
                                 </div>
                                 <div id="gdlr-core-recent-portfolio-widget-3" class="widget widget_gdlr-core-recent-portfolio-widget traveltour-widget">
                                     <h3 class="traveltour-widget-title"><span class="traveltour-widget-head-text">Recent Works</span></h3><span class="clear"></span>
@@ -125,7 +141,7 @@
                                         <div class="gdlr-core-recent-portfolio-widget gdlr-core-media-image">
                                             <a href="../portfolio/inceptos-bibendum-sem/index.html"><img src="upload/shutterstock_220323652-150x150.jpg" alt="" width="150" height="150" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-15 icon_link_alt"  ></i></span></a>
                                         </div>
-                                        <div class="gdlr-core-recent-portfolio-widget gdlr-core-media-image">
+                                        <!-- <div class="gdlr-core-recent-portfolio-widget gdlr-core-media-image">
                                             <a href="../portfolio/porta-justo/index.html"><img src="upload/photo-1443890923422-7819ed4101c0-150x150.jpg" alt="" width="150" height="150" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-15 icon_link_alt"  ></i></span></a>
                                         </div>
                                         <div class="gdlr-core-recent-portfolio-widget gdlr-core-media-image">
@@ -148,18 +164,18 @@
                                         </div>
                                         <div class="gdlr-core-recent-portfolio-widget gdlr-core-media-image">
                                             <a href="../portfolio/inceptos-vestibulum-ipsum-elit/index.html"><img src="upload/photo-1437651025703-2858c944e3eb-150x150.jpg" alt="" width="150" height="150" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-15 icon_link_alt"  ></i></span></a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div id="recent-comments-5" class="widget widget_recent_comments traveltour-widget">
                                     <h3 class="traveltour-widget-title"><span class="traveltour-widget-head-text">Recent Comments</span></h3><span class="clear"></span>
                                     <ul id="recentcomments">
                                         <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../pack-wisely-before-traveling/index.html#comment-39">Pack wisely before traveling</a></li>
-                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../pack-wisely-before-traveling/index.html#comment-38">Pack wisely before traveling</a></li>
+                                        <!-- <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../pack-wisely-before-traveling/index.html#comment-38">Pack wisely before traveling</a></li>
                                         <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../gallery-post-format/index.html#comment-4">Gallery Post Format</a></li>
                                         <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../gallery-post-format/index.html#comment-3">Gallery Post Format</a></li>
-                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../standard-post-type/index.html#comment-6">Standard Post Type</a></li>
-                                    </ul>
+                                        <li class="recentcomments"><span class="comment-author-link">John Smith</span> on <a href="../standard-post-type/index.html#comment-6">Standard Post Type</a></li>-->
+                                    </ul> 
                                 </div>
                                 <div id="tag_cloud-3" class="widget widget_tag_cloud traveltour-widget">
                                     <h3 class="traveltour-widget-title"><span class="traveltour-widget-head-text">Tag Cloud</span></h3><span class="clear"></span>
@@ -174,8 +190,26 @@
 </template>
 
 <script>
+import {getPostListByBoardId} from "@/api/board";
 export default {
     name:"ReviewList",
+    data() {
+        return{
+            reviewList : [],
+            // replyList : [] // 댓글 몇 개 정도..?
+        }
+    },
+    created(){
+        getPostListByBoardId(
+            3, // 여행 후기
+            ({ data }) => {
+                this.noticeList = data;
+            },
+            (error) => {
+                console.log(error); // 추후 에러 페이지
+            }
+        );
+    }
 }
 </script>
 

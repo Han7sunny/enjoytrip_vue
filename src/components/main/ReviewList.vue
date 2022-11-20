@@ -68,7 +68,7 @@
               data-layout="fitrows"
             >
               <div
-                class="gdlr-core-item-list gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-column-20 gdlr-core-column-first"
+                class="gdlr-core-item-list gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-column-20 gdlr-core-column-first" v-for="review in reviewList" :key="review.postId"
               >
                 <div
                   class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover gdlr-core-style-3 gdlr-core-outer-frame-element"
@@ -76,7 +76,7 @@
                   <div class="gdlr-core-blog-modern-inner">
                     <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
                       <img
-                        src="upload/shutterstock_195507533-400x466.jpg"
+                        src="@/assets/upload/shutterstock_195507533-400x466.jpg"
                         width="600"
                         height="700"
                         alt=""
@@ -87,8 +87,8 @@
                       class="gdlr-core-blog-modern-content gdlr-core-left-align"
                     >
                       <h3 class="gdlr-core-blog-title gdlr-core-skin-title">
-                        <router-link :to="{name:'reviewDetail', params:{postId:postId}}">
-                        How to travel with paper map</router-link>
+                        <router-link :to="{name:'reviewDetail', params:{postId:review.postId}}">
+                        {{review.title}}</router-link>
                       </h3>
                       <div
                         class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider"
@@ -98,14 +98,14 @@
                           ><span class="gdlr-core-blog-info-sep">•</span
                           ><span class="gdlr-core-head"
                             ><i class="icon_clock_alt"></i></span
-                          ><a href="#">June 6, 2016</a></span
+                          ><a href="#">{{review.registeredTime}}</a></span
                         ><span
                           class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"
                           ><span class="gdlr-core-blog-info-sep">•</span
                           ><span class="gdlr-core-head"
                             ><i class="icon_documents_alt"></i></span
                           ><a href="#" title="Posts by John Smith" rel="author"
-                            >John Smith</a
+                            >{{review.userId}}</a
                           ></span
                         >
                       </div>
@@ -113,7 +113,7 @@
                   </div>
                 </div>
               </div>
-              <div
+              <!-- <div
                 class="gdlr-core-item-list gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-column-20"
               >
                 <div
@@ -206,7 +206,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -216,8 +216,26 @@
 </template>
 
 <script>
+import {getPostListByBoardId} from "@/api/board";
 export default {
   name: "ReviewList",
+  data() {
+    return{
+      reviewList : []
+    }
+  },
+  created(){
+    // review 3개
+    getPostListByBoardId(
+            3, // 여행 후기
+            ({ data }) => {
+                this.noticeList = data.slice(0,3);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+  }
 };
 </script>
 

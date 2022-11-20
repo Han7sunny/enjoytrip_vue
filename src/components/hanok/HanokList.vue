@@ -29,7 +29,7 @@
                                 <div class="gdlr-core-pbf-element">
                                     <div class="tourmaster-tour-search-item clearfix tourmaster-style-column tourmaster-column-count-6 tourmaster-item-pdlr">
                                         <div class="tourmaster-tour-search-wrap ">
-                                            <form class="tourmaster-form-field tourmaster-with-border" action="https://demo.goodlayers.com/travelsearch-tours/" method="GET">
+                                            <form class="tourmaster-form-field tourmaster-with-border">
                                                 <!-- <div class="tourmaster-tour-search-field tourmaster-tour-search-field-keywords">
                                                     <label>Keywords</label>
                                                     <div class="tourmaster-tour-search-field-inner">
@@ -39,7 +39,7 @@
                                                 <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
                                                     <label>State</label>
                                                     <div class="tourmaster-combobox-wrap">
-                                                        <select name="state" @change="selectState" v-model="selectedState">
+                                                        <select name="state" @change="selectState" v-model="state">
                                                             <option :value="state.stateId" :key="state.stateId" v-for="state in stateList" >{{state.stateName}}</option>
                                                             <!-- <option value="city-tours">City Tours</option>
                                                             <option value="cultural-thematic-tours">Cultural &amp; Thematic Tours</option>
@@ -55,7 +55,7 @@
                                                 <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
                                                     <label>City</label>
                                                     <div class="tourmaster-combobox-wrap">
-                                                        <select name="city">
+                                                        <select name="city" v-model="city">
                                                             <option :value="city.cityId" :key="city.cityId" v-for="city in cityList" >{{city.cityName}}</option>
                                                             <!-- <option value="africa">Africa</option>
                                                             <option value="america">America</option>
@@ -74,7 +74,7 @@
                                                         <input class="tourmaster-datepicker-alt" name="date" type="hidden" value="" />
                                                     </div>
                                                 </div> -->
-                                                <input class="tourmaster-tour-search-submit" type="submit" value="Search" @click="search"/>
+                                                <input class="tourmaster-tour-search-submit" type="button" value="Search" @click="search"/>
                                             </form>
                                         </div>
                                     </div>
@@ -88,8 +88,10 @@
                                 <div class="gdlr-core-pbf-element">
                                     <div class="tourmaster-tour-item clearfix  tourmaster-tour-item-style-modern tourmaster-tour-item-column-5">
                                         <div class="tourmaster-tour-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
+                                            
+                                            <h2 v-if="!hanokList.length">검색 결과가 없습니다. </h2>
 
-                                            <hanok-list-item  v-for="hanok in hanokList" :key="hanok.zipcode" :hanok="hanok"></hanok-list-item>
+                                            <hanok-list-item  v-for="hanok in hanokList" :key="hanok.hanokId" :hanok="hanok" v-else></hanok-list-item>
 
                                             <!-- <div class="gdlr-core-item-list  tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-12 tourmaster-column-first">
                                                 <div class="tourmaster-tour-modern tourmaster-with-thumbnail tourmaster-without-info">
@@ -260,27 +262,27 @@
 </template>
 
 <script>
-import {getHanokList} from "@/api/hanok";
+import {getHanokList, getHanokListByCriteria} from "@/api/hanok";
 import {getStateList, getCityList} from "@/api/state";
-import {HanokListItem} from "@/components/hanok/HanokListItem.vue"
+import HanokListItem from "@/components/hanok/HanokListItem.vue"
 export default {
     name : "HanokList",
     data() {
         return {
             stateList:[],
-            selectedState:1,
+            state:1,
             cityList:[],
+            city:1,
             hanokList:[]
         }
     },
     components:{
-        HanokListItem
+        HanokListItem,
     },
     methods : {
         selectState(){
             getCityList(    
-                
-                this.selectedState,
+                this.state,
                 ({data}) => {
                     this.cityList = data;
                 },(error) => {
@@ -289,8 +291,14 @@ export default {
             );
         },
         search() {
-            console.log("search click")
-            // 한옥 state 검색 추가
+            getHanokListByCriteria(
+                this.state, this.city,
+                ({data}) => {
+                    this.hanokList = data;
+                },(error) => {
+                    console.log(error); // errorpage
+                }
+            );
         }
     },
     created() {
@@ -300,7 +308,7 @@ export default {
             },(error) => {
                 console.log(error); // errorpage
             }
-        );
+        ),
         getCityList(
             1, // seoul
             ({data}) => {
@@ -308,9 +316,9 @@ export default {
             },(error) => {
                 console.log(error); // errorpage
             }
-        );
+        ),
         getHanokList(
-            ({data}) => {
+            ({data}) => {console.log(data[0].hanokId);
                 this.hanokList = data;
             },(error) => {
                 console.log(error); // errorpage

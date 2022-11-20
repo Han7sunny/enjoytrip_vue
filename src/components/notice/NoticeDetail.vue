@@ -221,7 +221,7 @@ export default {
                 this.notice = data;
             },
             (error) => {
-                console.log(error);
+                console.log(error); // 추후 에러 페이지
             }
         );
     }

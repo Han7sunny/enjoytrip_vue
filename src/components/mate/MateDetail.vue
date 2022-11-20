@@ -5,15 +5,17 @@
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
                 <div class="tourmaster-page-wrapper tourmaster-tour-style-1 tourmaster-with-sidebar" id="tourmaster-page-wrapper">
 
-                    <div class="tourmaster-single-header" :style="{backgroundImage: 'url(' + theme.img1 +')'}">
+                    <!-- <div class="tourmaster-single-header" style="background-image: url(upload/shutterstock_254090041.jpg);"> -->
+                    <div class="tourmaster-single-header" :style="{backgroundImage: 'url(' + mate.img1 +')'}">
                         <div class="tourmaster-single-header-background-overlay"></div>
                         <div class="tourmaster-single-header-top-overlay"></div>
                         <div class="tourmaster-single-header-overlay"></div>
                         <div class="tourmaster-single-header-container tourmaster-container">
                             <div class="tourmaster-single-header-container-inner">
                                 <div class="tourmaster-single-header-title-wrap tourmaster-item-pdlr">
-                                    <h1 class="tourmaster-single-header-title">{{theme.title}}</h1>
-                                    <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text">조회수 {{theme.hits}}</span></div>
+                                    <h1 class="tourmaster-single-header-title">{{mate.title}}</h1>
+                                    <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text">조회수 {{mate.hits}}</span></div>
+                                    <!-- <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text"><i class="icon_comment_alt" ></i>{{mate.replies.length}}</span></div> -->
                                 </div>
                                 <div class="tourmaster-header-price tourmaster-item-mglr">
                                     <div class="tourmaster-header-price-ribbon">10% Off</div>
@@ -157,15 +159,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tourmaster-tour-info-outer" style="padding-top:5%">
+                        <div class="tourmaster-tour-info-outer">
                             <div class="tourmaster-tour-info-outer-container tourmaster-container">
                                 <div class="tourmaster-tour-info-wrap clearfix">
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr" v-if="theme.timeRequired"><i class="icon_clock_alt"></i>코스 소요 시간 : {{theme.timeRequired}}</div>
-                                    <!-- <div class="tourmaster-tour-info tourmaster-tour-info-availability tourmaster-item-pdlr"><i class="fa fa-calendar"></i>Availability : Jan 16’ - Dec 16’</div> -->
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-departure-location tourmaster-item-pdlr" v-if="theme.distance"><i class="flaticon-takeoff-the-plane"></i>코스 총 이동 거리 : {{theme.distance}}</div>
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-return-location tourmaster-item-pdlr" v-if="theme.contentCount"><i class="flaticon-plane-landing"></i>코스 개수 : {{theme.contentCount}}</div>
-                                    <!-- <div class="tourmaster-tour-info tourmaster-tour-info-minimum-age tourmaster-item-pdlr"><i class="fa fa-user"></i>Min Age : 11+</div> -->
-                                    <!-- <div class="tourmaster-tour-info tourmaster-tour-info-maximum-people tourmaster-item-pdlr"><i class="fa fa-users"></i>Max People : 42</div> -->
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr"><i class="icon_clock_alt"></i>8 Days 7 Nights</div>
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-availability tourmaster-item-pdlr"><i class="fa fa-calendar"></i>{{mate.startDate}} - {{mate.endDate}}</div>
+                                    <!-- <div class="tourmaster-tour-info tourmaster-tour-info-minimum-age tourmaster-item-pdlr"><i class="fa fa-user"></i>모집 인원 : {{mate.personnel}}</div> -->
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-maximum-people tourmaster-item-pdlr"><i class="fa fa-users"></i>{{mate.mates.length}} / {{mate.personnel}}</div>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                             <div class="tourmaster-content-navigation-item-wrap clearfix" style="padding-bottom: 0px;">
                                                 <div class="tourmaster-content-navigation-item-outer" id="tourmaster-content-navigation-item-outer">
                                                     <div class="tourmaster-content-navigation-item-container tourmaster-container">
-                                                        <div class="tourmaster-content-navigation-item tourmaster-item-pdlr"><a class="tourmaster-content-navigation-tab tourmaster-active" href="#detail">상세 정보</a><a class="tourmaster-content-navigation-tab " href="#itinerary">코스</a><a class="tourmaster-content-navigation-tab " href="#map">위치</a><a class="tourmaster-content-navigation-tab " href="#photos">사진</a><a class="tourmaster-content-navigation-tab " href="#tourmaster-single-review">후기</a>
+                                                        <div class="tourmaster-content-navigation-item tourmaster-item-pdlr"><a class="tourmaster-content-navigation-tab tourmaster-active" href="#detail">상세 정보</a><a class="tourmaster-content-navigation-tab " href="#map">위치</a><a class="tourmaster-content-navigation-tab " href="#photos">사진</a><a class="tourmaster-content-navigation-tab " href="#tourmaster-single-review">후기</a>
                                                             <div class="tourmaster-content-navigation-slider"></div>
                                                         </div>
                                                     </div>
@@ -199,71 +199,13 @@
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                                                 <div class="gdlr-core-text-box-item-content">
-                                                    <p>{{theme.overview}}</p>
+                                                    <!-- <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.</p>
+                                                    <p>Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum.</p> -->
+                                                    {{mate.content}}
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
-                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
-                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="theme.timeRequired">
-                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                                    <div class="gdlr-core-pbf-element">
-                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
-                                                            <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">소요 시간<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="theme.timeRequired">
-                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                                    <div class="gdlr-core-pbf-element">
-                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
-                                                            <div class="gdlr-core-text-box-item-content">
-                                                                <p>{{theme.timeRequired}}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-element" v-if="theme.timeRequired">
-                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
-                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="theme.distance">
-                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                                    <div class="gdlr-core-pbf-element">
-                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
-                                                            <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">총 이동거리<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="theme.distance">
-                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                                    <div class="gdlr-core-pbf-element">
-                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
-                                                            <div class="gdlr-core-text-box-item-content">
-                                                                <p>{{theme.distance}}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-element" v-if="theme.distance">
                                             <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
@@ -274,7 +216,128 @@
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">코스 구성<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">장소<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{content.title}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">주소<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{content.addr}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">모집 기간<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{mate.startDate}} - {{mate.endDate}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element" >
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">모집 정원<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{mate.personnel}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">list<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -286,8 +349,20 @@
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb clearfix " style="padding-bottom: 10px ;">
                                                             <ul>
-                                                                <li class=" gdlr-core-skin-divider" v-for="content in theme.contents" :key="content.contentId"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">{{content.title}}</span></div>
+                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Air fares</span></div>
+                                                                </li>
+                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">3 Nights Hotel Accomodation</span></div>
+                                                                </li>
+                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Tour Guide</span></div>
+                                                                </li>
+                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Entrance Fees</span></div>
+                                                                </li>
+                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">All transportation in destination location</span></div>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -300,7 +375,7 @@
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
                                         </div>
-                                        <!-- <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
                                             <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
                                                     <div class="gdlr-core-pbf-element">
@@ -335,9 +410,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
+                                        
                                         <div class="gdlr-core-pbf-element">
-                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 45px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
                                         </div>
@@ -347,41 +423,31 @@
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">Complementaries<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">여행 메이트 구성원<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" >
                                             <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
                                                     <div class="gdlr-core-pbf-element">
-                                                        <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb clearfix " style="padding-bottom: 10px ;">
-                                                            <ul>
-                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Umbrella</span></div>
-                                                                </li>
-                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Sunscreen</span></div>
-                                                                </li>
-                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">T-Shirt</span></div>
-                                                                </li>
-                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Entrance Fees</span></div>
-                                                                </li>
-                                                            </ul>
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{mate.mates.length}}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
-                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 45px ;">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
-                                        </div> -->
+                                        </div>
+
                                         <!-- <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
                                                 <div class="gdlr-core-title-item-title-wrap">
@@ -428,27 +494,27 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="gdlr-core-pbf-wrapper " style="padding: 20px 0px 30px 0px;" data-skin="Blue Icon" id="itinerary">
+                            <!-- <div class="gdlr-core-pbf-wrapper " style="padding: 20px 0px 30px 0px;" data-skin="Blue Icon" id="itinerary">
                                 <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
                                                 <div class="gdlr-core-title-item-title-wrap">
-                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-bus"  ></i></span>코스<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-bus"  ></i></span>Itinerary<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-toggle-box-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-toggle-box-style-background-title gdlr-core-left-align" style="padding-bottom: 25px ;">
-                                                <div class="gdlr-core-toggle-box-item-tab clearfix  gdlr-core-active" v-for="(content, course) in theme.contents" :key="content.contentId">
-                                                    <div class="gdlr-core-toggle-box-item-icon gdlr-core-js gdlr-core-skin-icon "></div> 
+                                                <div class="gdlr-core-toggle-box-item-tab clearfix  gdlr-core-active">
+                                                    <div class="gdlr-core-toggle-box-item-icon gdlr-core-js gdlr-core-skin-icon "></div>
                                                     <div class="gdlr-core-toggle-box-item-content-wrapper">
-                                                        <h4 class="gdlr-core-toggle-box-item-title gdlr-core-js  gdlr-core-skin-e-background gdlr-core-skin-e-content"><span class="gdlr-core-head" >코스 {{course + 1}}</span> {{content.title}}</h4>
+                                                        <h4 class="gdlr-core-toggle-box-item-title gdlr-core-js  gdlr-core-skin-e-background gdlr-core-skin-e-content"><span class="gdlr-core-head" >Day 1</span> Arrive in Zürich, Switzerland</h4>
                                                         <div class="gdlr-core-toggle-box-item-content">
-                                                            <p>{{content.overview}}</p>
+                                                            <p>We&#8217;ll meet at 4 p.m. at our hotel in Luzern (Lucerne) for a &#8220;Welcome to Switzerland&#8221; meeting. Then we&#8217;ll take a meandering evening walk through Switzerland&#8217;s most charming lakeside town, and get acquainted with one another over dinner together. Sleep in Luzern (2 nights). No bus. Walking: light.</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="gdlr-core-toggle-box-item-tab clearfix  gdlr-core-active">
+                                                <div class="gdlr-core-toggle-box-item-tab clearfix  gdlr-core-active">
                                                     <div class="gdlr-core-toggle-box-item-icon gdlr-core-js gdlr-core-skin-icon "></div>
                                                     <div class="gdlr-core-toggle-box-item-content-wrapper">
                                                         <h4 class="gdlr-core-toggle-box-item-title gdlr-core-js  gdlr-core-skin-e-background gdlr-core-skin-e-content"><span class="gdlr-core-head" >Day 2</span>Zürich–Biel/Bienne–Neuchâtel–Geneva</h4>
@@ -483,7 +549,7 @@
                                                             <p>It&#8217;s market day in Lausanne! Enjoy browsing and packing a picnic lunch for our 11 a.m. boat cruise on Lake Geneva. A few miles down-shore we&#8217;ll dock at Château de Chillon, where we&#8217;ll have a guided tour of this delightfully medieval castle on the water. On our way back we&#8217;ll take time to peek into the vineyards surrounding Lutry before returning to Lausanne. Boat: 2 hrs. Bus: 1 hr. Walking: moderate.</p>
                                                         </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
@@ -493,7 +559,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="map">
                                 <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
@@ -503,16 +569,16 @@
                                                     <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-map-o"  ></i></span>위치<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
                                             </div>
                                         </div>
-                                        <!-- <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 55px ;">
                                                 <div class="gdlr-core-text-box-item-content">
-                                                    <div class="">
+                                                    <!-- <div class="">
                                                         <iframe src="https://www.google.com/maps/d/embed?mid=1mGgtylMQHGAKR6HR8r8YLe5W4LU" width="100%" height="480"></iframe>
-                                                    </div>
+                                                    </div> -->
+                                                    <the-map :location="location"></the-map>
                                                 </div>
                                             </div>
-                                        </div> -->
-                                        <the-map :location="location"></the-map>
+                                        </div>
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 25px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 2px ;"></div>
@@ -521,7 +587,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="photos">
+                            <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="photos"  v-if="content.img1">
                                 <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                                         <div class="gdlr-core-pbf-element">
@@ -535,15 +601,16 @@
                                                 <div class="gdlr-core-flexslider flexslider gdlr-core-js-2 " data-type="slider" data-effect="default" data-nav="bullet">
                                                     <ul class="slides">
                                                         <li>
-                                                            <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                <a class="gdlr-core-ilightbox gdlr-core-js " data-ilightbox-group="gdlr-core-img-group-1"><img :src="theme.img1" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
+                                                            <div class="gdlr-core-gallery-list gdlr-core-media-image" v-if="content.img1">
+                                                                <a class="gdlr-core-ilightbox gdlr-core-js " data-ilightbox-group="gdlr-core-img-group-1"><img :src="content.img1" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
                                                             </div>
                                                         </li>
-                                                        <!-- <li>
-                                                            <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="upload/photo-1451337516015-6b6e9a44a8a3.jpg" data-ilightbox-group="gdlr-core-img-group-1"><img src="upload/photo-1451337516015-6b6e9a44a8a3-1500x1000.jpg" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
+                                                        <li>
+                                                            <div class="gdlr-core-gallery-list gdlr-core-media-image" v-if="content.img2">
+                                                                <a class="gdlr-core-ilightbox gdlr-core-js " data-ilightbox-group="gdlr-core-img-group-1"><img :src="content.img2" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
                                                             </div>
                                                         </li>
+                                                        <!-- 
                                                         <li>
                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
                                                                 <a class="gdlr-core-ilightbox gdlr-core-js " href="upload/italian-landscape-mountains-nature.jpg" data-ilightbox-group="gdlr-core-img-group-1"><img src="upload/italian-landscape-mountains-nature-1500x1000.jpg" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
@@ -562,47 +629,33 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="tourmaster-single-related-tour tourmaster-tour-item tourmaster-style-grid">
+                        <div class="tourmaster-single-related-tour tourmaster-tour-item tourmaster-style-grid">
                             <div class="tourmaster-single-related-tour-container tourmaster-container">
-                                <h3 class="tourmaster-single-related-tour-title tourmaster-item-pdlr">Related Tours</h3>
+                                <h3 class="tourmaster-single-related-tour-title tourmaster-item-pdlr">근처 여행지</h3>
                                 <div class="tourmaster-tour-item-holder clearfix ">
-                                    <div class="gdlr-core-item-list  tourmaster-column-30 tourmaster-item-pdlr tourmaster-column-first">
+                                    <div class="gdlr-core-item-list  tourmaster-column-30 tourmaster-item-pdlr" v-for="nearbyContent in nearbyContentList" :key="nearbyContent.contentId">
                                         <div class="tourmaster-tour-grid  tourmaster-price-right-title">
                                             <div class="tourmaster-tour-thumbnail tourmaster-media-image">
-                                                <a href="../switzerland-7-days-in-zurich-zermatt/index.html"><img src="upload/shutterstock_178807262-1024x683.jpg" alt="" width="1024" height="683" /></a>
+                                                <a href="../italy-6-days-in-rome-venice-milan/index.html"><img :src="nearbyContent.img1" alt="" width="1024" height="683" /></a>
                                                 <div class="tourmaster-thumbnail-ribbon gdlr-core-outer-frame-element" style="color: #ffffff;background-color: #e85e34;">
-                                                    <div class="tourmaster-thumbnail-ribbon-cornor" style="border-right-color: rgba(232, 94, 52, 0.5);"></div>20% Off</div>
+                                                    <div class="tourmaster-thumbnail-ribbon-cornor" style="border-right-color: rgba(232, 94, 52, 0.5);"></div>인기 여행지</div>
                                             </div>
                                             <div class="tourmaster-tour-content-wrap gdlr-core-skin-e-background">
-                                                <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="../switzerland-7-days-in-zurich-zermatt/index.html" >Switzerland &#8211; 7 Days in Zurich, Zermatt</a></h3>
-                                                <div class="tourmaster-tour-price-wrap tourmaster-discount"><span class="tourmaster-tour-price"><span class="tourmaster-head">From</span><span class="tourmaster-tail">$4,300</span></span><span class="tourmaster-tour-discount-price">$3,500</span></div>
-                                                <div class="tourmaster-tour-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><span class="tourmaster-tour-rating-text">(2 Reviews)</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="gdlr-core-item-list  tourmaster-column-30 tourmaster-item-pdlr">
-                                        <div class="tourmaster-tour-grid  tourmaster-price-right-title">
-                                            <div class="tourmaster-tour-thumbnail tourmaster-media-image">
-                                                <a href="../italy-6-days-in-rome-venice-milan/index.html"><img src="upload/shutterstock_245507692-1024x683.jpg" alt="" width="1024" height="683" /></a>
-                                                <div class="tourmaster-thumbnail-ribbon gdlr-core-outer-frame-element" style="color: #ffffff;background-color: #e85e34;">
-                                                    <div class="tourmaster-thumbnail-ribbon-cornor" style="border-right-color: rgba(232, 94, 52, 0.5);"></div>25% Off</div>
-                                            </div>
-                                            <div class="tourmaster-tour-content-wrap gdlr-core-skin-e-background">
-                                                <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="../italy-6-days-in-rome-venice-milan/index.html" >Enquiry Form Only &#8211; Italy &#8211; 6 Days</a></h3>
-                                                <div class="tourmaster-tour-price-wrap tourmaster-discount"><span class="tourmaster-tour-price"><span class="tourmaster-head">From</span><span class="tourmaster-tail">$3,700</span></span><span class="tourmaster-tour-discount-price">$2,000</span></div>
-                                                <div class="tourmaster-tour-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><span class="tourmaster-tour-rating-text">(1 Review)</span></div>
+                                                <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="../italy-6-days-in-rome-venice-milan/index.html" >{{nearbyContent.title}}</a></h3>
+                                                <div class="tourmaster-tour-price-wrap tourmaster-discount"><span class="tourmaster-tour-price"><span class="tourmaster-head">From</span><span class="tourmaster-tail">조회수</span></span><span class="tourmaster-tour-discount-price">{{nearbyContent.hits}}</span></div>
+                                                <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text">{{nearbyContent.addr}}</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="tourmaster-single-review-container tourmaster-container">
                             <div class="tourmaster-single-review-item tourmaster-item-pdlr">
                                 <div class="tourmaster-single-review" id="tourmaster-single-review">
                                     <div class="tourmaster-single-review-head clearfix">
                                         <div class="tourmaster-single-review-head-info clearfix">
-                                            <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text">1 Review</span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
+                                            <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text"><i class="icon_comment_alt" ></i> {{mate.replies.length}}</span></div>
                                             <div class="tourmaster-single-review-filter" id="tourmaster-single-review-filter">
                                                 <div class="tourmaster-single-review-sort-by"><span class="tourmaster-head">Sort By:</span><span class="tourmaster-sort-by-field" data-sort-by="rating">Rating</span><span class="tourmaster-sort-by-field tourmaster-active" data-sort-by="date">Date</span></div>
                                                 <div class="tourmaster-single-review-filter-by tourmaster-form-field tourmaster-with-border">
@@ -619,19 +672,19 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tourmaster-single-review-content" id="tourmaster-single-review-content" data-tour-id="4643" data-ajax-url="../../wp-admin/admin-ajax.html">
+                                    <div class="tourmaster-single-review-content" id="tourmaster-single-review-content" data-tour-id="4643" data-ajax-url="../../wp-admin/admin-ajax.html" v-for="reply in mate.replies" :key="reply.replyId">
                                         <div class="tourmaster-single-review-content-item clearfix">
                                             <div class="tourmaster-single-review-user clearfix">
                                                 <div class="tourmaster-single-review-avatar tourmaster-media-image"><img alt='' src='https://secure.gravatar.com/avatar/3fd67cef7cae9956b8831c16a70dba11?s=85&amp;d=mm&amp;r=g' srcset="https://secure.gravatar.com/avatar/3fd67cef7cae9956b8831c16a70dba11?s=170&#038;d=mm&#038;r=g 2x" class='avatar avatar-85 photo' height='85' width='85' /></div>
-                                                <h4 class="tourmaster-single-review-user-name">Jenifer Janeth</h4>
-                                                <div class="tourmaster-single-review-user-type">Couple Traveller</div>
+                                                <h4 class="tourmaster-single-review-user-name">{{reply.userId}}</h4>
+                                                <div class="tourmaster-single-review-user-type">replyUserName</div>
                                             </div>
                                             <div class="tourmaster-single-review-detail">
                                                 <div class="tourmaster-single-review-detail-description">
-                                                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum.</p>
+                                                    <p>{{reply.content}}</p>
                                                 </div>
-                                                <div class="tourmaster-single-review-detail-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
-                                                <div class="tourmaster-single-review-detail-date">January 24, 2017</div>
+                                                <!-- <div class="tourmaster-single-review-detail-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div> -->
+                                                <div class="tourmaster-single-review-detail-date">{{reply.registeredTime}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -641,7 +694,7 @@
                     </div>
                 </div>
                 <div class="tourmaster-urgency-message" id="tourmaster-urgency-message" data-expire="86400"><i class="tourmaster-urgency-message-icon fa fa-users"></i>
-                    <div class="tourmaster-urgency-message-text">5 travellers are considering this tour right now!</div>
+                    <div class="tourmaster-urgency-message-text">{{mate.mates.length}}명의 여행 메이트가 여행을 함께할 예정입니다.</div>
                 </div>
             </div>
             <!-- 기존 footer와 다름 -->
@@ -738,43 +791,50 @@
 </template>
 
 <script>
-import {getTheme} from "@/api/theme";
-import TheMap from "@/components/map/TheMap"
+import {getPost} from "@/api/board";
+import {getContentListByCriteria} from "@/api/content";
+import TheMap from "@/components/map/TheMap";
 export default {
-    name:"ThemeDetail",
+    name : "MateDetail",
     data(){
-        return{
-            theme : {},
-            location : {
-                // lat : "",
-                // lng : ""
+        return {
+            mate : {},
+            matesList : [],
+            location : {},
+            // content : {},
+            nearbyContentSearchCriteria : {
+                stateId : "",
+                cityId : ""
             },
-            photos : []
+            nearbyContentList : []
         }
     },
     components:{
         TheMap
     },
     created(){
-        getTheme(
-            this.$route.params.themeId,
+        getPost(1, // 여행 메이트
+            this.$route.params.postId,
             ({data}) => {
-                this.theme = data;
-                // this.location.lat = data.lat;
-                // this.location.lng = data.lng;console.log(this.location);
-                this.location = {lat : data.lat, lng : data.lng};
-                this.photos = [data.img1, data.img2];
-                this.theme.contents.forEach(content => {
-                    this.photos.push(content.img1, content.img2); // null, 빈값 제거
-                });
+                this.mate = data;
+                this.matesList = data.mates;
+                this.location = {lat : data.mapX, lng : data.mapY};
+                this.nearbyContentSearchCriteria.stateId = data.stateId;
+                this.nearbyContentSearchCriteria.cityId = data.cityId;
             },(error) => {
                 console.log(error); // errorpage
-            }
-        );
-        
+        }),
+        getContentListByCriteria(this.nearbyContentSearchCriteria,
+            ({data}) => {
+                this.nearbyContentList = data.slice(0,1); // 2개
+            },(error) => {
+                console.log(error); // errorpage
+        });
+        // contentId로 content 조회하기 (상세 정보를 위함)
     }
 }
 </script>
 
 <style>
+
 </style>

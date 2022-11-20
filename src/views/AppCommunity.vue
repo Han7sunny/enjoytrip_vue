@@ -13,7 +13,7 @@
                                 <div class="gdlr-core-pbf-element">
                                     <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
                                         <div class="gdlr-core-title-item-title-wrap">
-                                            <h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 79px ;letter-spacing: 0px ;text-transform: none ;">Services We Provide<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h1></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 21px ;color: #999999 ;">A small river named Duden flows by their place.</span></div>
+                                            <h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 79px ;letter-spacing: 0px ;text-transform: none ;">커뮤니티<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h1></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 21px ;color: #999999 ;">여행 후기, 여행 메이트, 여행 메이트 후기를 제공합니다.</span></div>
                                 </div>
                             </div>
                         </div>
@@ -36,13 +36,34 @@
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 17px ;">Our Story</span>
                                                     <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="letter-spacing: 0px ;text-transform: none ;">A Little About Us<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="letter-spacing: 0px ;text-transform: none ;">여행 후기<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                 </div>
                                             </div>
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 17px ;">
                                                         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+                                                        <div
+                                                            class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"
+                                                            style="padding-bottom: 52px"
+                                                        >
+                                                        <router-link :to="{name:'review'}">
+                                                            <a
+                                                            class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
+                                                            style="
+                                                                font-size: 15px;
+                                                                font-weight: 400;
+                                                                letter-spacing: 0px;
+                                                                color: #e66836;
+                                                                padding: 8px 0px 0px 0px;
+                                                            "
+                                                            ><span class="gdlr-core-content">더 많은 여행 후기 보기</span
+                                                            ><i
+                                                                class="gdlr-core-pos-right fa fa-long-arrow-right"
+                                                                style="font-size: 17px"
+                                                            ></i
+                                                            ></a></router-link>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -61,13 +82,34 @@
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 17px ;">Philosophy</span>
                                                     <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="letter-spacing: 0px ;text-transform: none ;">Our Top Missions<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="letter-spacing: 0px ;text-transform: none ;">여행 메이트 모집<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                 </div>
                                             </div>
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 17px ;">
                                                         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+                                                        <div
+                                                            class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"
+                                                            style="padding-bottom: 52px"
+                                                        >
+                                                        <router-link :to="{name:'mate'}">
+                                                            <a
+                                                            class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
+                                                            style="
+                                                                font-size: 15px;
+                                                                font-weight: 400;
+                                                                letter-spacing: 0px;
+                                                                color: #e66836;
+                                                                padding: 8px 0px 0px 0px;
+                                                            "
+                                                            ><span class="gdlr-core-content">더 많은 여행 메이트 보기</span
+                                                            ><i
+                                                                class="gdlr-core-pos-right fa fa-long-arrow-right"
+                                                                style="font-size: 17px"
+                                                            ></i
+                                                            ></a></router-link>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,13 +145,34 @@
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 17px ;">Strategy</span>
                                                     <div class="gdlr-core-title-item-title-wrap">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="letter-spacing: 0px ;text-transform: none ;">We Provide Solutions<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="letter-spacing: 0px ;text-transform: none ;">여행 메이트 후기<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                 </div>
                                             </div>
                                             <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                                                     <div class="gdlr-core-text-box-item-content" style="font-size: 17px ;">
                                                         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+                                                        <div
+                                                            class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"
+                                                            style="padding-bottom: 52px"
+                                                        >
+                                                        <router-link :to="{name:'mateReview'}">
+                                                            <a
+                                                            class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
+                                                            style="
+                                                                font-size: 15px;
+                                                                font-weight: 400;
+                                                                letter-spacing: 0px;
+                                                                color: #e66836;
+                                                                padding: 8px 0px 0px 0px;
+                                                            "
+                                                            ><span class="gdlr-core-content">더 많은 여행 메이트 후기 보기</span
+                                                            ><i
+                                                                class="gdlr-core-pos-right fa fa-long-arrow-right"
+                                                                style="font-size: 17px"
+                                                            ></i
+                                                            ></a></router-link>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -249,6 +312,7 @@ export default {
 </script>
 
 <style>
+@import "@/assets/css/traveltour-style-custom.css";
 .section-bg-4{
     background-image: url(@/assets/upload/section-bg-4.jpg)
 }

@@ -1,18 +1,18 @@
 <template>
-  <div>
+<div>
   <div class="traveltour-body-outer-wrapper ">
         <div class="traveltour-body-wrapper clearfix  traveltour-with-frame">
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
                 <div class="tourmaster-page-wrapper tourmaster-tour-style-1 tourmaster-with-sidebar" id="tourmaster-page-wrapper">
 
-                    <div class="tourmaster-single-header" style="background-image: url(upload/shutterstock_254090041.jpg);">
+                    <div class="tourmaster-single-header" :style="{backgroundImage: 'url(' + hanok.img +')'}">
                         <div class="tourmaster-single-header-background-overlay"></div>
                         <div class="tourmaster-single-header-top-overlay"></div>
                         <div class="tourmaster-single-header-overlay"></div>
                         <div class="tourmaster-single-header-container tourmaster-container">
                             <div class="tourmaster-single-header-container-inner">
                                 <div class="tourmaster-single-header-title-wrap tourmaster-item-pdlr">
-                                    <h1 class="tourmaster-single-header-title">Finland &#8211;  Helsinki, Santa Claus Town</h1>
+                                    <h1 class="tourmaster-single-header-title">{{hanok.title}}</h1>
                                     <div class="tourmaster-tour-rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><span class="tourmaster-tour-rating-text">(1 Review)</span></div>
                                 </div>
                                 <div class="tourmaster-header-price tourmaster-item-mglr">
@@ -114,7 +114,6 @@
                                                         <h3 class="tourmaster-lightbox-title">Proceed Booking</h3><i class="tourmaster-lightbox-close icon_close"></i></div>
                                                     <div class="tourmaster-lightbox-content">
                                                         <div class="tourmaster-login-form2-wrap clearfix">
-                                                           
                                                             <div class="tourmaster-login2-right">
                                                                 <h3 class="tourmaster-login2-right-title">Don&#039;t have an account? Create one.</h3>
                                                                 <div class="tourmaster-login2-right-content">
@@ -157,15 +156,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tourmaster-tour-info-outer">
+                        <div class="tourmaster-tour-info-outer" style="padding-top:5%">
                             <div class="tourmaster-tour-info-outer-container tourmaster-container">
                                 <div class="tourmaster-tour-info-wrap clearfix">
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-duration-text tourmaster-item-pdlr"><i class="icon_clock_alt"></i>8 Days 7 Nights</div>
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-availability tourmaster-item-pdlr"><i class="fa fa-calendar"></i>Availability : Jan 16’ - Dec 16’</div>
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-departure-location tourmaster-item-pdlr"><i class="flaticon-takeoff-the-plane"></i>San Francisco</div>
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-return-location tourmaster-item-pdlr"><i class="flaticon-plane-landing"></i>Finland</div>
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-minimum-age tourmaster-item-pdlr"><i class="fa fa-user"></i>Min Age : 11+</div>
-                                    <div class="tourmaster-tour-info tourmaster-tour-info-maximum-people tourmaster-item-pdlr"><i class="fa fa-users"></i>Max People : 42</div>
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-departure-location tourmaster-item-pdlr"><i class="icon_clock_alt" v-if="hanok.checkIn"></i>체크인 : {{hanok.checkIn}}</div>
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-return-location tourmaster-item-pdlr"><i class="icon_clock_alt" v-if="hanok.checkOut"></i>체크아웃 : {{hanok.checkOut}}</div>
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-maximum-people tourmaster-item-pdlr"><i class="fa fa-users" v-if="hanok.roomCount"></i>객실 수 : {{hanok.roomCount}}</div>
+                                    <div class="tourmaster-tour-info tourmaster-tour-info-availability tourmaster-item-pdlr"><i class="fa fa-calendar" v-if="hanok.reservation"></i>예약 문의 : {{hanok.reservation}}</div>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +174,7 @@
                                             <div class="tourmaster-content-navigation-item-wrap clearfix" style="padding-bottom: 0px;">
                                                 <div class="tourmaster-content-navigation-item-outer" id="tourmaster-content-navigation-item-outer">
                                                     <div class="tourmaster-content-navigation-item-container tourmaster-container">
-                                                        <div class="tourmaster-content-navigation-item tourmaster-item-pdlr"><a class="tourmaster-content-navigation-tab tourmaster-active" href="#detail">Detail</a><a class="tourmaster-content-navigation-tab " href="#itinerary">Itinerary</a><a class="tourmaster-content-navigation-tab " href="#map">Map</a><a class="tourmaster-content-navigation-tab " href="#photos">Photos</a><a class="tourmaster-content-navigation-tab " href="#tourmaster-single-review">Reviews</a>
+                                                        <div class="tourmaster-content-navigation-item tourmaster-item-pdlr"><a class="tourmaster-content-navigation-tab tourmaster-active" href="#detail">상세 정보</a><a class="tourmaster-content-navigation-tab " href="#map">위치</a><a class="tourmaster-content-navigation-tab " href="#photos">사진</a><a class="tourmaster-content-navigation-tab " href="#tourmaster-single-review">후기</a>
                                                             <div class="tourmaster-content-navigation-slider"></div>
                                                         </div>
                                                     </div>
@@ -193,14 +190,15 @@
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
                                                 <div class="gdlr-core-title-item-title-wrap">
-                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-file-text-o"  ></i></span>Tour Details<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-file-text-o"  ></i></span>상세 정보<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                                                 <div class="gdlr-core-text-box-item-content">
-                                                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.</p>
-                                                    <p>Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum.</p>
+                                                    <!-- <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.</p>
+                                                    <p>Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum.</p> -->
+                                                    {{hanok.overview}}
                                                 </div>
                                             </div>
                                         </div>
@@ -215,7 +213,7 @@
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">Departure & Return Location <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">주소<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -227,7 +225,7 @@
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-text-box-item-content">
-                                                                <p>John F.K. International Airport (<a href="#">Google Map</a>)</p>
+                                                                <p>{{hanok.addr}}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -239,43 +237,73 @@
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
                                         </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="hanok.scale">
                                             <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">Departure Time<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">규모<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="hanok.scale">
                                             <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-text-box-item-content">
-                                                                <p>3 Hours Before Flight Time</p>
+                                                                <p>{{hanok.scale}}</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-pbf-element" v-if="hanok.scale">
                                             <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
                                         </div>
-                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="hanok.roomCount">
                                             <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">Price Includes<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">객실 수<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="hanok.roomCount">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{hanok.roomCount}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element" v-if="hanok.roomCount">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">list<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,19 +376,19 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="gdlr-core-pbf-element">
+                                        </div> -->
+                                        <!-- <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
                                             <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
                                                 <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
                                                     <div class="gdlr-core-pbf-element">
                                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                                             <div class="gdlr-core-title-item-title-wrap">
-                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">Complementaries<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">체크인 체크아웃<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -373,16 +401,10 @@
                                                         <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb clearfix " style="padding-bottom: 10px ;">
                                                             <ul>
                                                                 <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Umbrella</span></div>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">체크인 {{hanok.checkIn}}</span></div>
                                                                 </li>
                                                                 <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Sunscreen</span></div>
-                                                                </li>
-                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">T-Shirt</span></div>
-                                                                </li>
-                                                                <li class=" gdlr-core-skin-divider"><span class="gdlr-core-icon-list-icon-wrap"><i class="gdlr-core-icon-list-icon fa fa-check" style="color: #4692e7 ;" ></i></span>
-                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">Entrance Fees</span></div>
+                                                                    <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content">체크아웃 {{hanok.checkOut}}</span></div>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -395,7 +417,102 @@
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
                                         </div>
-                                        <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="hanok.reservation">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">예약 문의<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="hanok.reservation">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{hanok.reservation}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element" v-if="hanok.reservation">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="hanok.homepage">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">홈페이지<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="hanok.homepage">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{hanok.homepage}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element" v-if="hanok.homepage">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first" v-if="hanok.refundPolicy">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-title-item-title-wrap">
+                                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 15px ;font-weight: 500 ;letter-spacing: 0px ;text-transform: none ;">환불 정책<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column gdlr-core-column-30" v-if="hanok.refundPolicy">
+                                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                                    <div class="gdlr-core-pbf-element">
+                                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px ;">
+                                                            <div class="gdlr-core-text-box-item-content">
+                                                                <p>{{hanok.refundPolicy}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element" v-if="hanok.refundPolicy">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 19px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <!-- <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
                                                 <div class="gdlr-core-title-item-title-wrap">
                                                     <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 16px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">What to Expect<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
@@ -437,11 +554,11 @@
                                             <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 15px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider"></div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="gdlr-core-pbf-wrapper " style="padding: 20px 0px 30px 0px;" data-skin="Blue Icon" id="itinerary">
+                            <!-- <div class="gdlr-core-pbf-wrapper " style="padding: 20px 0px 30px 0px;" data-skin="Blue Icon" id="itinerary">
                                 <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                                         <div class="gdlr-core-pbf-element">
@@ -506,25 +623,29 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="map">
                                 <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
                                                 <div class="gdlr-core-title-item-title-wrap">
-                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-map-o"  ></i></span>Map<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-map-o"  ></i></span>위치<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 55px ;">
                                                 <div class="gdlr-core-text-box-item-content">
-                                                    <div class="">
+                                                    <!-- <div class="">
                                                         <iframe src="https://www.google.com/maps/d/embed?mid=1mGgtylMQHGAKR6HR8r8YLe5W4LU" width="100%" height="480"></iframe>
-                                                    </div>
+                                                    </div> -->
+                                                    <!--  style="width:500px;height:400px;" -->
+                                                    <!-- <div id="map" class="ms-3 mt-4 mb-5"></div>  -->
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- 위치 위에 덮어버림 -->
+                                                        <the-map :location="location"></the-map>
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 25px ;">
                                                 <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 2px ;"></div>
@@ -539,7 +660,7 @@
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
                                                 <div class="gdlr-core-title-item-title-wrap">
-                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="icon_images"  ></i></span>Photos<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="icon_images"  ></i></span>사진<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
                                             </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
@@ -548,10 +669,10 @@
                                                     <ul class="slides">
                                                         <li>
                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="upload/pexels-photo-copy-2.jpg" data-ilightbox-group="gdlr-core-img-group-1"><img src="upload/pexels-photo-copy-2-1500x1000.jpg" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
+                                                                <a class="gdlr-core-ilightbox gdlr-core-js " data-ilightbox-group="gdlr-core-img-group-1"><img :src="hanok.img" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
                                                             </div>
                                                         </li>
-                                                        <li>
+                                                        <!-- <li>
                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
                                                                 <a class="gdlr-core-ilightbox gdlr-core-js " href="upload/photo-1451337516015-6b6e9a44a8a3.jpg" data-ilightbox-group="gdlr-core-img-group-1"><img src="upload/photo-1451337516015-6b6e9a44a8a3-1500x1000.jpg" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
                                                             </div>
@@ -565,7 +686,7 @@
                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
                                                                 <a class="gdlr-core-ilightbox gdlr-core-js " href="upload/shutterstock_195507533.jpg" data-caption="Map" data-ilightbox-group="gdlr-core-img-group-1"><img src="upload/shutterstock_195507533-1500x1000.jpg" alt="" width="1500" height="1000" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
                                                             </div>
-                                                        </li>
+                                                        </li> -->
                                                     </ul>
                                                 </div>
                                             </div>
@@ -574,7 +695,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tourmaster-single-related-tour tourmaster-tour-item tourmaster-style-grid">
+                        <!-- <div class="tourmaster-single-related-tour tourmaster-tour-item tourmaster-style-grid">
                             <div class="tourmaster-single-related-tour-container tourmaster-container">
                                 <h3 class="tourmaster-single-related-tour-title tourmaster-item-pdlr">Related Tours</h3>
                                 <div class="tourmaster-tour-item-holder clearfix ">
@@ -608,13 +729,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="tourmaster-single-review-container tourmaster-container">
                             <div class="tourmaster-single-review-item tourmaster-item-pdlr">
                                 <div class="tourmaster-single-review" id="tourmaster-single-review">
                                     <div class="tourmaster-single-review-head clearfix">
                                         <div class="tourmaster-single-review-head-info clearfix">
-                                            <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text">1 Review</span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
+                                            <div class="tourmaster-tour-rating"><span class="tourmaster-tour-rating-text">1 후기</span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></div>
                                             <div class="tourmaster-single-review-filter" id="tourmaster-single-review-filter">
                                                 <div class="tourmaster-single-review-sort-by"><span class="tourmaster-head">Sort By:</span><span class="tourmaster-sort-by-field" data-sort-by="rating">Rating</span><span class="tourmaster-sort-by-field tourmaster-active" data-sort-by="date">Date</span></div>
                                                 <div class="tourmaster-single-review-filter-by tourmaster-form-field tourmaster-with-border">
@@ -751,18 +872,24 @@
 
 <script>
 import {getHanok} from "@/api/hanok";
+import TheMap from "@/components/map/TheMap";
 export default {
     name:"HanokDetail",
     data(){
         return {
-            hanok : {}
+            hanok : {},
+            location : {}
         }
+    },
+    components:{
+        TheMap
     },
     created(){
         let hanokId = this.$route.params.hanokId;
         getHanok(hanokId, 
             ({ data }) => {
                 this.hanok = data;
+                this.location = {lat : data.lat, lng : data.lng};
             },
             (error) => {
                 console.log(error);
