@@ -49,54 +49,76 @@
                                                                     <p>
                                                                         <br>
                                                                         <span class="wpcf7-form-control-wrap your-name">
-                                                                            <input id="title" type="text" v-model="mate.title" ref="title" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="여행 후기 제목">
+                                                                            <input id="title" type="text" v-model="mate.title" ref="title" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="제목">
                                                                         </span> 
                                                                     </p>
                                                                 </div>
-                                                                <div class="tourmaster-tour-search-wrap ">
-                                                                <!-- <div class="quform-element"> -->
-                                                                    <!-- <p> -->
-                                                                        <br>
-                                                                        <!-- <span class="wpcf7-form-control-wrap"> -->
-                                                                            <!-- <select id="state" type="text" size="20" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-rquired" aria-required="true" aria-invalid="false" @change="selectState" v-model="selectedState">
-                                                                                <option :value="state.stateId" :key="state.stateId" v-for="state in stateList" >{{state.stateName}}</option>
-                                                                            </select>
-                                                                            <select id="city" type="text" size="20" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-rquired" aria-required="true" aria-invalid="false">
-                                                                                <option :value="city.cityId" :key="city.cityId" v-for="city in cityList" >{{city.cityName}}</option>
-                                                                            </select> -->
-                                                                            <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
-                                                                                <label>State</label>
-                                                                                <div class="tourmaster-combobox-wrap">
-                                                                                    <select name="state" @change="selectState" v-model="mate.stateId" ref="selectedState">
-                                                                                        <option :value="state.stateId" :key="state.stateId" v-for="state in stateList">{{state.stateName}}</option>
-                                                                                        <!-- <option value="city-tours">City Tours</option>
-                                                                                        <option value="cultural-thematic-tours">Cultural &amp; Thematic Tours</option>
-                                                                                        <option value="family-friendly-tours">Family Friendly Tours</option>
-                                                                                        <option value="holiday-seasonal-tours">Holiday &amp; Seasonal Tours</option>
-                                                                                        <option value="indulgence-luxury-tours">Indulgence &amp; Luxury Tours</option>
-                                                                                        <option value="outdoor-activites">Outdoor Activites</option>
-                                                                                        <option value="relaxation-tours">Relaxation Tours</option>
-                                                                                        <option value="wild-adventure-tours">Wild &amp; Adventure Tours</option> -->
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
-                                                                                <label>City</label>
-                                                                                <div class="tourmaster-combobox-wrap">
-                                                                                    <select name="city" v-model="mate.cityId" ref="selectedCity">
-                                                                                        <option :value="city.cityId" :key="city.cityId" v-for="city in cityList">{{city.cityName}}</option>
-                                                                                        <!-- <option value="africa">Africa</option>
-                                                                                        <option value="america">America</option>
-                                                                                        <option value="asia">Asia</option>
-                                                                                        <option value="eastern-europe">Eastern Europe</option>
-                                                                                        <option value="europe">Europe</option>
-                                                                                        <option value="south-america">South America</option> -->
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                        <!-- </span>  -->
-                                                                    <!-- </p> -->
+                                                                <div class="tourmaster-tour-search-wrap">
+                                                                    <br />
+                                                                    <search-map></search-map>
                                                                 </div>
+
+                                                                <div class="quform-element">
+                                                                    <p>
+                                                                        <br />
+                                                                        <span class="wpcf7-form-control-wrap your-name">
+                                                                        <input
+                                                                            id="contentTitle"
+                                                                            type="text"
+                                                                            size="40"
+                                                                            ref="contentTitle"
+                                                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                            aria-invalid="false"
+                                                                            :value = "refreshContent.title"
+                                                                            placeholder="여행지"
+                                                                            readonly  
+                                                                        />
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="quform-element">
+                                                                <p>
+                                                                    <br />
+                                                                    <span class="wpcf7-form-control-wrap your-name">
+                                                                    <input
+                                                                        id="addr"
+                                                                        type="text"
+                                                                        size="40"
+                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                        aria-invalid="false"
+                                                                        :value = "refreshContent.addr"
+                                                                        placeholder="여행지 주소"
+                                                                        readonly  
+                                                                    />
+                                                                    </span>
+                                                                </p>
+                                                                </div>
+                                                                <div class="quform-element">
+                                                                    <p>
+                                                                        <br />
+                                                                        <span class="wpcf7-form-control-wrap your-name">
+                                                                        <input
+                                                                            id="personnel"
+                                                                            type="text"
+                                                                            size="40"
+                                                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                            aria-invalid="false"
+                                                                            placeholder="여행 메이트 정원"
+                                                                        />
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                   <div class="row">
+                                                               <br/>                                 
+                                                                        <div class="col-3 mb-3">
+                                                                            <input type="date" class="form-control text-center" data-placeholder="시작일"
+                                                                                id="startDate" v-model="startDate" aria-required="true" required @click="enterStartDate"/>
+                                                                        </div>
+                                                                        <div class="col-3 mb-3">
+                                                                            <input type="date" class="form-control text-center" data-placeholder="종료일"
+                                                                                id="endDate" v-model="endDate" required />
+                                                                        </div>
+                                                                                            </div>
                                                                 <div class="quform-element">
                                                                     <p>
                                                                         <br>
@@ -223,72 +245,72 @@
 </template>
 
 <script>
-import { getStateList, getCityList } from "@/api/state";
+import { mapState, mapActions, mapGetters } from "vuex";
+import SearchMap from "@/components/map/SearchMap.vue";
 // import { postPost } from "@/api/board";
+const contentStore = "contentStore";
 export default {
     name:"MateWrite",
     data(){
         return{
-            stateList: [],
-            cityList: [],
-            content : {}, // 선택한 여행지
+            ...mapState(contentStore, ["content"]),
+            // content : {}, // 선택한 여행지
             mate : {
                 userId : "", // loginUserId
+                // themeId : "",
                 stateId : 1,
                 cityId : 1,
-                title : "",
+                title : "", // ok
                 boardId : 3,
-                content : "",
+                content : "", // ok
+                contentId : "",
                 img1 : "",
                 img2 : "",
+                personnel : "", // 
+                startDate : "", // 
+                endDate : "", // 
             }
         }
+    },
+    components:{
+        SearchMap
     },
     // props:{
     //     content : Object; // 시군구 검색을 통해 얻어낸 content 
     // },
+    computed: {
+        content() {
+            console.log("computed"+this.$store.state.content); // 값 변함
+        //   this.review.contentId = this.$store.state.content.contentId;
+        //   this.reviewContent.title = this.$store.state.content.title;
+        //   this.reviewContent.addr = this.$store.state.content.addr;
+        
+        return this.$store.state.content;
+        },
+        ...mapGetters(contentStore, ["refreshContent"]),
+    },
     methods:{
-        selectState(){
-            getCityList(    
-                this.mate.stateId,
-                ({data}) => {
-                    this.cityList = data;
-                },(error) => {
-                    console.log(error); // errorpage
-                }
-            );
+            ...mapActions(contentStore, ["setContent"]),
+        enterStartDate(){
+            document.querySelector("#endDate").setAttribute("min",this.startDate);
         },
         checkMateValue(){
             let err = true;
             let msg = "";
             !this.mate.title && ((msg = "제목을 입력해주세요"), (err = false), this.$refs.title.focus());
+            err && !this.contentTitle && ((msg = "여행지를 선택해주세요"), (err = false), this.$refs.contentTitle.focus());
             err && !this.mate.content && ((msg = "여행 후기 내용을 입력해주세요"), (err = false), this.$refs.content.focus());
 
             if (!err) alert(msg);
             else this.registMate();
-        },
+        },  
         registMate(){
             console.log(this.mate);
             // postPost(this.mate);
         }
     },
-    created(){
-        getStateList(
-            ({data}) => {
-                this.stateList = data;
-            },(error) => {
-                console.log(error); // errorpage
-            }
-        ),
-        getCityList(
-            1, // seoul
-            ({data}) => {
-                this.cityList = data;
-            },(error) => {
-                console.log(error); // errorpage
-            }
-        )
-    }
+    // created(){
+    // }
 }
 </script>
 

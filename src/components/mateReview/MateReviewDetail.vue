@@ -16,7 +16,24 @@
                                         <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-tag"><span class="traveltour-head"><i class="icon_tags_alt" ></i></span><a href="../tag/news/index.html" rel="tag">News</a></div>
                                         <div class="traveltour-blog-info traveltour-blog-info-font traveltour-blog-info-comment-number"><span class="traveltour-head"><i class="icon_comment_alt" ></i></span>2</div>
                                     </div>
-                                    <h1 class="traveltour-single-article-title">Standard Post Type</h1></div>
+                                    <h1 class="traveltour-single-article-title">여행 메이트 후기</h1></div>
+                                    <a
+              class="gdlr-core-button gdlr-core-button-transparent gdlr-core-button-no-border"
+              style="
+                font-size: 15px;
+                font-weight: 400;
+                letter-spacing: 0px;
+                color: #e66836;
+                padding: 8px 0px 0px 0px;
+              " v-if="mateReviewModify"
+              >
+              <router-link :to="{name:'mateReviewModify', params:{review : this.review, location : this.location}}"><span class="gdlr-core-content">여행 메이트 후기 글 수정하기</span
+              ><i
+                class="gdlr-core-pos-right fa fa-long-arrow-right"
+                style="font-size: 17px"
+              ></i
+            ></router-link>
+            </a>
                             </header>
                         </div>
                     </div>
@@ -60,6 +77,37 @@
                                     <div class="gdlr-core-page-builder-body"></div>
                                 </div>
                                 
+<div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="map">
+                                <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                                    <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
+                                                <div class="gdlr-core-title-item-title-wrap">
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-map-o"  ></i></span>위치<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 55px ;">
+                                                <div class="gdlr-core-text-box-item-content">
+                                                    <!-- <div class="">
+                                                        <iframe src="https://www.google.com/maps/d/embed?mid=1mGgtylMQHGAKR6HR8r8YLe5W4LU" width="100%" height="480"></iframe>
+                                                    </div> -->
+                                                    <!--  style="width:500px;height:400px;" -->
+                                                    <!-- <div id="map" class="ms-3 mt-4 mb-5"></div>  -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 위치 위에 덮어버림 -->
+                                                        <the-map :location="location"></the-map>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 25px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 2px ;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                                     <div class="traveltour-single-social-share traveltour-item-rvpdlr">
                                         <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-center-align gdlr-core-social-share-left-text gdlr-core-item-pdlr gdlr-core-style-plain" style="padding-bottom: 0px ;">
                                             <span class="gdlr-core-social-share-count gdlr-core-skin-title">
@@ -206,8 +254,13 @@
 </template>
 
 <script>
+import TheMap from "@/components/map/TheMap";
+
 export default {
-    name:"MateReviewDetail"
+    name:"MateReviewDetail",
+    components:{
+        TheMap
+    }
 }
 </script>
 

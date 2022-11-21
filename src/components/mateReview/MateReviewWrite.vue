@@ -53,36 +53,76 @@
                                                                         </span> 
                                                                     </p>
                                                                 </div>
-                                                                <div class="tourmaster-tour-search-wrap ">
-                                                                <!-- <div class="quform-element"> -->
-                                                                    <!-- <p> -->
-                                                                        <br>
-                                                                        <!-- <span class="wpcf7-form-control-wrap"> -->
-                                                                            <!-- <select id="state" type="text" size="20" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-rquired" aria-required="true" aria-invalid="false" @change="selectState" v-model="selectedState">
-                                                                                <option :value="state.stateId" :key="state.stateId" v-for="state in stateList" >{{state.stateName}}</option>
-                                                                            </select>
-                                                                            <select id="city" type="text" size="20" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-rquired" aria-required="true" aria-invalid="false">
-                                                                                <option :value="city.cityId" :key="city.cityId" v-for="city in cityList" >{{city.cityName}}</option>
-                                                                            </select> -->
-                                                                            <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
-                                                                                <label>State</label>
-                                                                                <div class="tourmaster-combobox-wrap">
-                                                                                    <select name="state" @change="selectState" v-model="mateReview.stateId" ref="selectedState">
-                                                                                        <option :value="state.stateId" :key="state.stateId" v-for="state in stateList">{{state.stateName}}</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
-                                                                                <label>City</label>
-                                                                                <div class="tourmaster-combobox-wrap">
-                                                                                    <select name="city" v-model="mateReview.cityId" ref="selectedCity">
-                                                                                        <option :value="city.cityId" :key="city.cityId" v-for="city in cityList">{{city.cityName}}</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                        <!-- </span>  -->
-                                                                    <!-- </p> -->
+                                                                <!-- 마이페이지에서 넘어온 값으로 찍히도록 -->
+                                                                <!-- <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="map">
+                                <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                                    <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
+                                                <div class="gdlr-core-title-item-title-wrap">
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-map-o"  ></i></span>위치<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 55px ;">
+                                                <div class="gdlr-core-text-box-item-content">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                         
+                                                        <the-map :location="location"></the-map>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 25px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 2px ;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                </div> -->
+                                                                
+                                                                <div class="tourmaster-tour-search-wrap">
+                                                                    <br />
+                                                                    <search-map></search-map>
                                                                 </div>
+
+                                                                <div class="quform-element">
+                                                                    <p>
+                                                                        <br />
+                                                                        <span class="wpcf7-form-control-wrap your-name">
+                                                                        <input
+                                                                            id="contentTitle"
+                                                                            type="text"
+                                                                            size="40"
+                                                                            ref="contentTitle"
+                                                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                            aria-invalid="false"
+                                                                            :value = "refreshContent.title"
+                                                                            placeholder="여행지"
+                                                                            readonly  
+                                                                        />
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="quform-element">
+                                                                <p>
+                                                                    <br />
+                                                                    <span class="wpcf7-form-control-wrap your-name">
+                                                                    <input
+                                                                        id="addr"
+                                                                        type="text"
+                                                                        size="40"
+                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                        aria-invalid="false"
+                                                                        :value = "refreshContent.addr"
+                                                                        placeholder="여행지 주소"
+                                                                        readonly  
+                                                                    />
+                                                                    </span>
+                                                                </p>
+                                                                </div>
+
+
                                                                 <div class="quform-element">
                                                                     <label>score</label>
                                                                     <p>
@@ -93,6 +133,14 @@
                                                                         <option class="tourmaster-tour-rating text-warning" value="4"><i class="fa fa-star"></i><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></option>
                                                                         <option class="tourmaster-tour-rating text-warning" value="5" selected><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></option>
                                                                     </select>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="quform-element">
+                                                                    <p>
+                                                                        <br>
+                                                                        <span class="wpcf7-form-control-wrap your-name">
+                                                                            <input id="mates" type="text" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-invalid="false" readonly value="여행 메이트 구성원">
+                                                                        </span> 
                                                                     </p>
                                                                 </div>
                                                                 <div class="quform-element">
@@ -221,14 +269,16 @@
 </template>
 
 <script>
-import { getStateList, getCityList } from "@/api/state";
+import { mapState, mapActions, mapGetters } from "vuex";
+import SearchMap from "@/components/map/SearchMap.vue";
 // import { postPost } from "@/api/board";
+const contentStore = "contentStore";
 export default {
     name:"MateReviewWrite",
     data(){
         return{
-            stateList: [],
-            cityList: [],
+                        ...mapState(contentStore, ["content"]),
+
             mateReview : {
                 userId : "", // loginUserId
                 stateId : 1,
@@ -242,17 +292,12 @@ export default {
             }
         }
     },
+    components:{
+        SearchMap
+    },
     methods:{
-        selectState(){
-            getCityList(    
-                this.mateReview.stateId,
-                ({data}) => {
-                    this.cityList = data;
-                },(error) => {
-                    console.log(error); // errorpage
-                }
-            );
-        },
+                    ...mapActions(contentStore, ["setContent"]),
+
         checkMateReviewValue(){
             let err = true;
             let msg = "";
@@ -267,23 +312,19 @@ export default {
             // postPost(this.mateReview);
         }
     },
-    created(){
-        getStateList(
-            ({data}) => {
-                this.stateList = data;
-            },(error) => {
-                console.log(error); // errorpage
-            }
-        ),
-        getCityList(
-            1, // seoul
-            ({data}) => {
-                this.cityList = data;
-            },(error) => {
-                console.log(error); // errorpage
-            }
-        )
-    }
+    computed: {
+        content() {
+            console.log("computed"+this.$store.state.content); // 값 변함
+        //   this.review.contentId = this.$store.state.content.contentId;
+        //   this.reviewContent.title = this.$store.state.content.title;
+        //   this.reviewContent.addr = this.$store.state.content.addr;
+        
+        return this.$store.state.content;
+        },
+        ...mapGetters(contentStore, ["refreshContent"]),
+    },
+    // created(){
+    // }
 }
 </script>
 

@@ -6,7 +6,7 @@
                 <div class="traveltour-page-title-overlay"></div>
                 <div class="traveltour-page-title-container traveltour-container">
                     <div class="traveltour-page-title-content traveltour-item-pdlr">
-                        <h1 class="traveltour-page-title">Blog Grid 2 Columns No Space</h1></div>
+                        <h1 class="traveltour-page-title">여행 메이트 후기</h1></div>
                 </div>
             </div>
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">

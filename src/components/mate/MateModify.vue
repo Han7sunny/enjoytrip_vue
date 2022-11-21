@@ -8,7 +8,7 @@
         <div class="traveltour-page-title-overlay"></div>
         <div class="traveltour-page-title-container traveltour-container">
           <div class="traveltour-page-title-content traveltour-item-pdlr">
-            <h1 class="traveltour-page-title">여행 후기 작성</h1>
+            <h1 class="traveltour-page-title">여행 후기 수정</h1>
           </div>
         </div>
       </div>
@@ -106,65 +106,49 @@
                                   <input
                                     id="title"
                                     type="text"
-                                    v-model="review.title"
+                                    v-model="mate.title"
                                     ref="title"
                                     size="40"
                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                     aria-required="true"
                                     aria-invalid="false"
-                                    placeholder="제목"
                                   />
                                 </span>
                               </p>
                             </div>
-                            <div class="tourmaster-tour-search-wrap">
-                              <!-- <div class="quform-element"> -->
-                              <!-- <p> -->
-                              <br />
-                              <!-- <span class="wpcf7-form-control-wrap"> -->
-                              <!-- <select id="state" type="text" size="20" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-rquired" aria-required="true" aria-invalid="false" @change="selectState" v-model="selectedState">
-                                                                                <option :value="state.stateId" :key="state.stateId" v-for="state in stateList" >{{state.stateName}}</option>
-                                                                            </select>
-                                                                            <select id="city" type="text" size="20" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required wpcf7-validates-as-rquired" aria-required="true" aria-invalid="false">
-                                                                                <option :value="city.cityId" :key="city.cityId" v-for="city in cityList" >{{city.cityName}}</option>
-                                                                            </select> -->
-
-                              <search-map></search-map>
-                              <!-- replace to searchMap -->
-                              <!-- <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
-                                                                                <label>State</label>
-                                                                                <div class="tourmaster-combobox-wrap">
-                                                                                    <select name="state" @change="selectState" v-model="review.stateId" ref="selectedState">
-                                                                                        <option :value="state.stateId" :key="state.stateId" v-for="state in stateList">{{state.stateName}}</option>
-                                                                                        <option value="city-tours">City Tours</option>
-                                                                                        <option value="cultural-thematic-tours">Cultural &amp; Thematic Tours</option>
-                                                                                        <option value="family-friendly-tours">Family Friendly Tours</option>
-                                                                                        <option value="holiday-seasonal-tours">Holiday &amp; Seasonal Tours</option>
-                                                                                        <option value="indulgence-luxury-tours">Indulgence &amp; Luxury Tours</option>
-                                                                                        <option value="outdoor-activites">Outdoor Activites</option>
-                                                                                        <option value="relaxation-tours">Relaxation Tours</option>
-                                                                                        <option value="wild-adventure-tours">Wild &amp; Adventure Tours</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="tourmaster-tour-search-field tourmaster-tour-search-field-tax">
-                                                                                <label>City</label>
-                                                                                <div class="tourmaster-combobox-wrap">
-                                                                                    <select name="city" v-model="review.cityId" ref="selectedCity">
-                                                                                        <option :value="city.cityId" :key="city.cityId" v-for="city in cityList">{{city.cityName}}</option>
-                                                                                        <option value="africa">Africa</option>
-                                                                                        <option value="america">America</option>
-                                                                                        <option value="asia">Asia</option>
-                                                                                        <option value="eastern-europe">Eastern Europe</option>
-                                                                                        <option value="europe">Europe</option>
-                                                                                        <option value="south-america">South America</option> 
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </span> 
-                                                                    </p> -->
+                            
+                            <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 30px 0px;" data-skin="Blue Icon" id="map">
+                                <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                                    <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 35px ;">
+                                                <div class="gdlr-core-title-item-title-wrap">
+                                                    <h6 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;"><span class="gdlr-core-title-item-left-icon" style="font-size: 18px ;"  ><i class="fa fa-map-o"  ></i></span>위치<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h6></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 55px ;">
+                                                <div class="gdlr-core-text-box-item-content">
+                                                    <!-- <div class="">
+                                                        <iframe src="https://www.google.com/maps/d/embed?mid=1mGgtylMQHGAKR6HR8r8YLe5W4LU" width="100%" height="480"></iframe>
+                                                    </div> -->
+                                                    <!--  style="width:500px;height:400px;" -->
+                                                    <!-- <div id="map" class="ms-3 mt-4 mb-5"></div>  -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 위치 위에 덮어버림 -->
+                                                        <the-map :location="location"></the-map>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-divider-item-normal gdlr-core-center-align" style="margin-bottom: 25px ;">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-bottom-width: 2px ;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+
                             <div class="quform-element">
                               <p>
                                 <br />
@@ -176,8 +160,7 @@
                                     ref="contentTitle"
                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                     aria-invalid="false"
-                                    :value = "refreshContent.title"
-                                    placeholder="여행지"
+                                    :value = "mate.title"
                                     readonly  
                                   />
                                 </span>
@@ -193,8 +176,7 @@
                                     size="40"
                                     class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                     aria-invalid="false"
-                                    :value = "refreshContent.addr"
-                                    placeholder="여행지 주소"
+                                    :value = "mate.addr"
                                     readonly  
                                   />
                                 </span>
@@ -205,7 +187,7 @@
                               <p>
                                 <select
                                   class="tourmaster-tour-rating rateSelect form-control form-select border-0 py-3"
-                                  v-model="review.score"
+                                  v-model="mate.score"
                                 >
                                   <!-- <option class="star text-center">별점</option> -->
                                   <option
@@ -296,13 +278,12 @@
                                 >
                                   <textarea
                                     id="content"
-                                    v-model="review.content"
+                                    v-model="mate.content"
                                     ref="content"
                                     cols="40"
                                     rows="10"
                                     class="wpcf7-form-control wpcf7-textarea"
                                     aria-invalid="false"
-                                    placeholder="여행 후기 내용"
                                   ></textarea>
                                 </span>
                               </p>
@@ -331,7 +312,7 @@
                                 <button
                                   type="button"
                                   class="submit-button"
-                                  @click="checkReviewValue"
+                                  @click="checkMateValue"
                                 >
                                   <span>등록</span>
                                 </button>
@@ -562,80 +543,61 @@
   </div>
 </template>
 
+
 <script>
-import { mapState, mapActions, mapGetters } from "vuex";
-import SearchMap from "@/components/map/SearchMap.vue";
-// import { postPost } from "@/api/board";
-const contentStore = "contentStore";
+import TheMap from "@/components/map/TheMap";
+
 export default {
-  name: "ReviewWrite",
-  data() {
-    return {
-      ...mapState(contentStore, ["content"]),
-      contentTitle : "",
-      review: {
+    name:"MateModify",
+    data(){
+        return{
+        // location : {}, // props이면 필요 없음
+        mate: {
         userId: "", // loginUserId
         contentId : "",
         stateId: 1,
         cityId: 1,
         title: "",
-        boardId: 3,
+        boardId: 1,
         content: "",
         img1: "",
         img2: "",
         score: "",
       }
-    };
-  },
-  components: {
-    SearchMap,
-  },
-  computed: {
-    content() {
-      console.log("computed"+this.$store.state.content); // 값 변함
-    //   this.review.contentId = this.$store.state.content.contentId;
-    //   this.reviewContent.title = this.$store.state.content.title;
-    //   this.reviewContent.addr = this.$store.state.content.addr;
-      
-      return this.$store.state.content;
+        }
     },
-    ...mapGetters(contentStore, ["refreshContent"]),
-  },
-  methods: {
-    ...mapActions(contentStore, ["setContent"]),
-    checkReviewValue() {
-      let err = true;
-      let msg = "";
-      !this.review.title &&
-        ((msg = "제목을 입력해주세요"),
-        (err = false),
-        this.$refs.title.focus());
-      err &&
-        !this.contentTitle.content &&
-        ((msg = "여행지를 선택해주세요"),
-        (err = false),
-        this.$refs.contentTitle.focus());
-      err &&
-        !this.review.content &&
-        ((msg = "여행 후기 내용을 입력해주세요"),
-        (err = false),
-        this.$refs.content.focus());
+    // props:{
+    //     location : Object,
+    //     mate : Object
+    // },
+    components:{
+        TheMap
+    },
+    methods:{
+      checkMateValue(){
+        //유효성 검사 _ 빈 값 있는지
+      }  
+    },
+    created(){
+        // console.log(this.$route.params.location);
+        // this.location = this.$route.params.location;
 
-      if (!err) alert(msg);
-      else this.registReview();
-    },
-    registReview() {
-      console.log(this.review);
-      // postPost(this.review);
-    },
-  },
-//   created() {
-//   },
-};
+        // this.mate = this.$route.params.mate; // for modify
+
+        // getPost(1, this.$route.params.postId,
+        //     ({data}) => {
+        //         this.mate = data;
+        //     },(error) => {
+        //         console.log(error); // errorpage
+        // });
+        // contentId로 content 조회 필요함 -> 지도에 출력하기 위한 lat,lng
+        // 아니야 그냥 수정할 때 해당 content랑 location 둘 다 보내주면 되는거잖아
+        // console.log(this.review);
+        // location = {lat : this.review.lat, lng : this.review.lng}
+    }
+}
 </script>
 
 <style>
-.background {
-  background-image: url(@/assets/upload/section-bg-2.jpg);
-}
+
 </style>

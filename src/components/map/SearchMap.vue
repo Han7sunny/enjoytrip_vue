@@ -78,7 +78,7 @@
       ></div>
       <div id="menu_wrap" class="bg_white">
         <!-- <hr /> -->
-        <ul id="placesList" @click="check">
+        <ul id="placesList">
           <!---->
           <search-map-item
             v-for="content in contentList"
@@ -148,23 +148,19 @@ export default {
         cityId: this.city,
         contentTypeId: this.contentType,
       };
-      console.log(this.contentSearchCriteria);
+    //   console.log(this.contentSearchCriteria);
       getContentListByCriteria(
         this.contentSearchCriteria,
         // { stateId: this.state, cityId: this.city, contentTypeId: this.contentType },
         ({ data }) => {
           this.contentList = data;
-          console.log(this.contentList); // ok
+        //   console.log(this.contentList); // ok
           this.initMap(); // 카카오 지도 실행
         },
         (error) => {
           console.log(error); // errorpage
         }
       );
-    },
-    check() {
-      console.log("upper click");
-      // console.log(this.$refs.)
     },
     nullAlarm() {
       let nullAlert = document.getElementById("null-alert");
@@ -371,15 +367,15 @@ export default {
     },
     // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
     // 인포윈도우에 장소명을 표시합니다
-    displayInfowindow(marker, title) {
-      console.log("enter displyInfowindow");
-      // 작성하기
-      var content =
-        '<div style="width: fit-content;padding:5px;">' + title + "</div>"; //z-index:1;
-      this.infowindow.setContent(content);
-      // this.infowindow.open(this.kakaoMap, marker);
-      this.infowindow.open(this.map, marker);
-    },
+    // displayInfowindow(marker, title) {
+    //   console.log("enter displyInfowindow");
+    //   // 작성하기
+    //   var content =
+    //     '<div style="width: fit-content;padding:5px;">' + title + "</div>"; //z-index:1;
+    //   this.infowindow.setContent(content);
+    //   // this.infowindow.open(this.kakaoMap, marker);
+    //   this.infowindow.open(this.map, marker);
+    // },
   },
   mounted() {
     if (!window.kakao || !window.kakao.maps) {
@@ -395,7 +391,7 @@ export default {
     }
   },
   created() {
-    this.setContent(this.content);
+    this.setContent(this.content); // ? 
     getStateList(
       ({ data }) => {
         this.stateList = data;

@@ -60,6 +60,11 @@ const routes = [
         path: "write",
         name: "reviewWrite",
         component:()=>import("@/components/review/ReviewWrite.vue")
+      },
+      {
+        path: "modify",
+        name: "reviewModify",
+        component:()=>import("@/components/review/ReviewModify.vue")
       }
     ]
   },
@@ -78,6 +83,16 @@ const routes = [
         path: "detail/:postId",
         name: "mateReviewDetail",
         component:()=>import("@/components/mateReview/MateReviewDetail.vue")
+      },
+      {
+        path: "write",
+        name: "mateReviewWrite",
+        component:()=>import("@/components/mateReview/MateReviewWrite.vue")
+      },
+      {
+        path: "modify",
+        name: "mateReviewModify",
+        component:()=>import("@/components/mateReview/MateReviewModify.vue")
       }
     ]
   },
