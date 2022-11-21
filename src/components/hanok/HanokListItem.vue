@@ -1,9 +1,13 @@
 <template>
-  <div class="gdlr-core-item-list tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-12">
-    <div class="tourmaster-tour-modern tourmaster-with-thumbnail tourmaster-without-info">
+  <div
+    class="gdlr-core-item-list tourmaster-item-pdlr tourmaster-item-mgb tourmaster-column-12"
+  >
+    <div
+      class="tourmaster-tour-modern tourmaster-with-thumbnail tourmaster-without-info"
+    >
       <div class="tourmaster-tour-modern-inner">
         <div class="tourmaster-tour-thumbnail tourmaster-media-image">
-          <img :src="hanok.img" alt="" width="600" height="800"/>
+          <img :src="hanok.img" alt="" width="600" height="800" />
         </div>
         <div class="tourmaster-tour-content-wrap">
           <div class="tourmaster-tour-price-wrap">
@@ -12,8 +16,13 @@
               ><span class="tourmaster-tail">{{ hanok.title }}</span></span
             >
             <h3 class="tourmaster-tour-title gdlr-core-skin-title">
-              <router-link :to="{ name: 'hanokDetail', params: { hanokId: hanok.hanokId } }"
-            >{{ hanok.addr }}</router-link>
+              <router-link
+                :to="{
+                  name: 'hanokDetail',
+                  params: { hanokId: hanok.hanokId },
+                }"
+                >{{ hanok.addr }}</router-link
+              >
             </h3>
           </div>
         </div>
@@ -31,4 +40,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.tourmaster-media-image {
+  width: 100%;
+  height: 40vh;
+}
+
+.tourmaster-media-image > img {
+}
+</style>
